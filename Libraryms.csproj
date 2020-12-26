@@ -20,7 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Libra\" />
     <Folder Include="Views\Rezervimi\" />
     <Folder Include="Views\Rafti\" />
     <Folder Include="Views\Pagesa\" />
