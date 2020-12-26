@@ -20,9 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Rezervimi\" />
-    <Folder Include="Views\Rafti\" />
-    <Folder Include="Views\Pagesa\" />
+    <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 
 </Project>
