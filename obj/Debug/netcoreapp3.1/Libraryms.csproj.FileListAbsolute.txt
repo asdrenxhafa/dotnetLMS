@@ -167,7 +167,10 @@ C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Libraryms.MvcApplicati
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Libraryms.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Huazimi\Index.cshtml.g.cs
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Klienti\Index.cshtml.g.cs
-C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Libra\Index.cshtml.g.cs
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Pagesa\Index.cshtml.g.cs
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Rafti\Index.cshtml.g.cs
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Index.cshtml.g.cs
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Huazimi\Details.cshtml.g.cs
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Librat\Create.cshtml.g.cs
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Librat\Edit.cshtml.g.cs
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Librat\List.cshtml.g.cs

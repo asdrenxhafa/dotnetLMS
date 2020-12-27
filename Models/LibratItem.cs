@@ -1,21 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Libraryms.Models.Libra
+namespace Libraryms.Models
 {
-    public class Libra
+    public class LibratItem
     {
         public Guid Id { get; set; }
 
-        // [Required]
-        // [MinLength(5)]
+        [Required]
         public string Titulli { get; set; }
-        public string Rafti_id { get; set; }
         public string Autori { get; set; }
         public bool E_Lire { get; set; }
-        public DateTime created_at { get; set; }
-        public DateTime deleted_at { get; set; }
     }
 }

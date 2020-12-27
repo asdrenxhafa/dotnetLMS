@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form method="POST" action="">
+            
+            <div class="modal-header">
+                <h4 class="modal-title">Edito Automjetin</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="window.location='/huazimi';">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Nr i Shasise</label>
+                    <input name="nr_shasise" id="nr_shasise" type="text" class="form-control" value="##" required>
+                </div>
+                <div class="form-group">
+                    <label>Regjistrimi</label>
+                    <input name="regjistrimi" id="regjistrimi" type="text" class="form-control" value="##" required>
+                </div>
+                <div class="form-group">
+                    <label>Lloji</label>
+                    <input name="lloji" id="lloji" type="text" class="form-control" value="##" required>
+                </div>
+                <div class="form-group">
+                    <label>Brendi</label>
+                    <input name="brendi" id="brendi" type="text" class="form-control" value="##" required>
+                </div>
+                <div class="form-group">
+                    <label>Viti</label>
+                    <input name="viti" id="viti" type="number" class="form-control" value="##" required>
+                </div>
+                <div class="form-group">
+                    <label>Kilometrat</label>
+                    <input name="kilometrat" id="kilometrat" type="number" class="form-control" value="##" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-default" value="Anulo" onclick="window.location='/huazimi';">
+                <input style="float:right;" type="button" value="Fshij" class="btn btn-danger" data-toggle="modal" data-target="#modal3">
+            </div>
+        </form>
+        <input type="submit" class="btn btn-primary" value="Edito">
+    </div>
+</div>
+

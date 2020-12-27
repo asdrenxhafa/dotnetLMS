@@ -1,12 +1,16 @@
 ﻿
+@model List<LibratItem>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "List";
 }
 
 <title>Index</title>
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Librat</h1>
+<h1 class="h3 mb-2 text-gray-800">Klientet</h1>
+
+<a class="btn btn-primary" asp-action="Create">Create new</a>
+
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -21,7 +25,6 @@
                         <th>#</th>
                         <th>Titulli</th>
                         <th>Autori</th>
-                        <th>Rafti</th>
                         <th>E Lire</th>
                         <th>Veprime</th>
                     </tr>
@@ -31,23 +34,28 @@
                         <th>#</th>
                         <th>Titulli</th>
                         <th>Autori</th>
-                        <th>Rafti</th>
                         <th>E Lire</th>
                         <th>Veprime</th>
                     </tr>
                 </tfoot>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Asdren</td>
-                        <td>Asdren Xhafa</td>
-                        <td>61</td>
-                        <td>Po</td>
-                        <td><button class="btn btn-primary" href="#">Edito</button></td>
-                    </tr>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Titulli</td>
+                            <td>@item.Autori</td>
+                            <td>@(item.E_Lire ? "Yes" : "No")</td>
+                            <td>
+                                <a class="btn btn-primary" href="@Url.Action("Edit",new { id = item.Id })">Edit</a>
+                                <a class="btn btn-danger" href="@Url.Action("Delete",new { id = item.Id })">Delete</a>
+                            </td>
+                        </tr>
+
+                    }
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-
