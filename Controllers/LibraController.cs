@@ -24,10 +24,22 @@ namespace Libraryms.Controllers
             return View(await _context.Libra.ToListAsync());
         }
 
-        [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var libra = await _context.Libra
+                .FirstOrDefaultAsync(m => m.id == id);
+
+            if (libra == null)
+            {
+                return NotFound();
+            }
+
+            return View(libra);
         }
 
         [HttpPost]
