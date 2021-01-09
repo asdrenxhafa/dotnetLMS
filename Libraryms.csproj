@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Models\Klienti\" />
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 

@@ -1,0 +1,25 @@
+﻿@model Klienti
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label>Emri:</label>
+        <input type="text" asp-for="Emri" /> <br>
+        <span asp-validation-for="Emri"></span>
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="text" asp-for="Email" />
+    </div>
+    <div class="form-group">
+        <label>NumriTel:</label>
+        <input type="text" asp-for="NumriTel" />
+    </div>
+    <input class="btn btn-primary" type="submit" value="Submit" />
+</form>

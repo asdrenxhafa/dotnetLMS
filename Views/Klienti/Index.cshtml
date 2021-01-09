@@ -1,4 +1,5 @@
-﻿
+﻿@model List<Klienti>
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -7,6 +8,9 @@
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Klientet</h1>
+
+
+<a class="btn btn-primary" asp-action="Create">Create new</a>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -19,33 +23,42 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Titulli</th>
-                        <th>Autori</th>
-                        <th>Rafti</th>
-                        <th>E Lire</th>
-                        <th>Veprime</th>
+                        <th>Emri</th>
+                        <th>Email</th>
+                        <th>NumriTel</th>
+                        <th>Aktiv</th>
+ 
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <th>#</th>
-                        <th>Titulli</th>
-                        <th>Autori</th>
-                        <th>Rafti</th>
-                        <th>E Lire</th>
-                        <th>Veprime</th>
+                        <th>Emri</th>
+                        <th>Email</th>
+                        <th>NumriTel</th>
+                        <th>Aktiv</th>
                     </tr>
                 </tfoot>
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Asdren</td>
-                        <td>Asdren Xhafa</td>
-                        <td>61</td>
-                        <td>Po</td>
-                        <td><button class="btn btn-primary" href="#">Edito</button></td>
+                        @foreach (var item in Model)
+                        {
+
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Emri</td>
+                        <td>@item.Email</td>
+                        <td>@item.NumriTel</td>
+                        <td>@(item.Aktiv ? "Yes" : "No")</td>
+                        <td>
+                            <a class="btn btn-primary" href="@Url.Action("Edit",new { id = item.Id })">Edit</a>
+                            <a class="btn btn-danger" href="@Url.Action("Delete",new { id = item.Id })">Delete</a>
+                        </td>
                     </tr>
-                </tbody>
+
+                    }
+                        </tr>
+                    </tbody>
             </table>
         </div>
     </div>

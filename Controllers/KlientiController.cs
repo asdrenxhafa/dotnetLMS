@@ -4,83 +4,88 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Libraryms.Models;
 
 namespace Libraryms.Controllers
 {
     public class KlientiController : Controller
     {
-        // GET: KlientiController
-        public ActionResult Index()
+       
+        public IActionResult Index()
+        {
+            return View(Data.KlientiList);
+        }
+
+
+        [HttpGet]
+        public IActionResult Create()
         {
             return View();
         }
 
-        // GET: KlientiController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: KlientiController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: KlientiController/Create
+      
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult Create(Klienti klienti)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                klienti.Id = Guid.NewGuid();
+                Data.KlientiList.Add(klienti);
+
+                return RedirectToAction("Index");
             }
-            catch
+            else
             {
                 return View();
             }
         }
 
-        // GET: KlientiController/Edit/5
-        public ActionResult Edit(int id)
+        [HttpGet]
+        public IActionResult Edit(Guid id)
         {
-            return View();
+            var item = Data.KlientiList.SingleOrDefault(x => x.Id == id);
+
+            return View(item);
         }
 
-        // POST: KlientiController/Edit/5
+        [HttpGet]
+        public IActionResult Delete(Guid id)
+        {
+            var item = Data.KlientiList.SingleOrDefault(x => x.Id == id);
+            Data.KlientiList.Remove(item);
+
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult Complete(Guid id)
+        {
+            var item = Data.KlientiList.SingleOrDefault(x => x.Id == id);
+            item.Aktiv = true;
+
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult Undo(Guid id)
+        {
+            var item = Data.KlientiList.SingleOrDefault(x => x.Id == id);
+            item.Aktiv = false;
+
+            return RedirectToAction("Index");
+        }
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public IActionResult Edit(Klienti item)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                var origianlItem = Data.KlientiList.SingleOrDefault(x => x.Id == item.Id);
+                origianlItem.Emri = item.Emri;
+                origianlItem.Email = item.Email;
+                origianlItem.NumriTel = item.NumriTel;
+                return RedirectToAction("List");
             }
-            catch
+            else
             {
-                return View();
-            }
-        }
-
-        // GET: KlientiController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: KlientiController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
+                return View(item);
             }
         }
     }
