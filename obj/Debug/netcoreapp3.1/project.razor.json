@@ -14432,6 +14432,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Klienti\\Edit.cshtml",
+      "TargetPath": "Views\\Klienti\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Rezervimi\\Index.cshtml",
       "TargetPath": "Views\\Rezervimi\\Index.cshtml",
       "FileKind": "mvc"
@@ -14499,6 +14504,11 @@
     {
       "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Huazimi\\Details.cshtml",
       "TargetPath": "Views\\Huazimi\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Klienti\\Create.cshtml",
+      "TargetPath": "Views\\Klienti\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -155,6 +155,7 @@ C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Pagesa\Ind
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Rafti\Index.cshtml.g.cs
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Index.cshtml.g.cs
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Huazimi\Details.cshtml.g.cs
+
 C:\Users\Asdren\Desktop\Libraryms\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
 C:\Users\Asdren\Desktop\Libraryms\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\Asdren\Desktop\Libraryms\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
@@ -199,3 +200,6 @@ C:\Users\Asdren\Desktop\Libraryms\bin\Debug\netcoreapp3.1\runtimes\win-x64\nativ
 C:\Users\Asdren\Desktop\Libraryms\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 C:\Users\Asdren\Desktop\Libraryms\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Asdren\Desktop\Libraryms\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Klienti\Create.cshtml.g.cs
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Klienti\Edit.cshtml.g.cs

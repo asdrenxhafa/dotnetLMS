@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\Klienti\**" />
+    <Content Remove="Models\Klienti\**" />
+    <EmbeddedResource Remove="Models\Klienti\**" />
+    <None Remove="Models\Klienti\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 

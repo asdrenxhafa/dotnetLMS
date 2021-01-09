@@ -4,84 +4,102 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Libraryms.Models;
 
 namespace Libraryms.Controllers
 {
     public class KlientiController : Controller
     {
-        // GET: KlientiController
-        public ActionResult Index()
+       
+        public IActionResult Index()
+        {
+            //return View(Data.KlientiList);
+            return View();
+        }
+
+
+        [HttpGet]
+        public IActionResult Create()
         {
             return View();
         }
 
-        // GET: KlientiController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+      
+        //[HttpPost]
+        //public IActionResult Create(Klienti klienti)
+        //{
+        //    /*
+        //    if (ModelState.IsValid)
+        //    {
+        //        klienti.Id = Guid.NewGuid();
+        //        Data.KlientiList.Add(klienti);
 
-        // GET: KlientiController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //        return RedirectToAction("Index");
+        //    }
+        //    else
+        //    {
+        //        return View();
+        //    }
+        //    */
+        //}
 
-        // POST: KlientiController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //[HttpGet]
+        //public IActionResult Edit(Guid id)
+        //{
+        //    /*
+        //    var item = Data.KlientiList.SingleOrDefault(x => x.Id == id);
 
-        // GET: KlientiController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
+        //    return View(item);
+        //    */
+        //}
 
-        // POST: KlientiController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //[HttpGet]
+        //public IActionResult Delete(Guid id)
+        //{
+        //    /*
+        //    var item = Data.KlientiList.SingleOrDefault(x => x.Id == id);
+        //    Data.KlientiList.Remove(item);
 
-        // GET: KlientiController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        //    return RedirectToAction("Index");
+        //    */
+        //}
+        //[HttpGet]
+        //public IActionResult Complete(Guid id)
+        //{
+        //    /*
+        //    var item = Data.KlientiList.SingleOrDefault(x => x.Id == id);
+        //    item.Aktiv = true;
 
-        // POST: KlientiController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //    return RedirectToAction("Index");
+        //    */
+        //}
+        //[HttpGet]
+        //public IActionResult Undo(Guid id)
+        //{
+        //    /*
+        //    var item = Data.KlientiList.SingleOrDefault(x => x.Id == id);
+        //    item.Aktiv = false;
+
+        //    return RedirectToAction("Index");
+        //    */
+        //}
+        //[HttpPost]
+        //public IActionResult Edit(Klienti item)
+        //{
+        //    /*
+        //    if (ModelState.IsValid)
+        //    {
+        //        var origianlItem = Data.KlientiList.SingleOrDefault(x => x.Id == item.Id);
+        //        origianlItem.Emri = item.Emri;
+        //        origianlItem.Email = item.Email;
+        //        origianlItem.NumriTel = item.NumriTel;
+        //        return RedirectToAction("List");
+        //    }
+        //    else
+        //    {
+        //        return View(item);
+        //    }
+        //    */
+        //}
     }
 }

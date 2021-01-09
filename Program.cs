@@ -32,7 +32,7 @@ namespace Libraryms
                 try
                 {
                     var context = services.GetRequiredService<LibrarymsContext>();
-                    DbInit.Initialize(context);
+                    Libraryms.Data.DbInit.Initialize(context);
                 }
                 catch (Exception ex)
                 {
