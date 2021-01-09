@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Libraryms.Data;
 
 namespace Libraryms
 {
@@ -27,6 +28,12 @@ namespace Libraryms
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            var connection = @"Server=localhost\SQLEXPRESS;Database=librms;Trusted_Connection=True;";
+            services.AddDbContext<LibrarymsContext>
+                (options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,16 +60,12 @@ namespace Libraryms
 
             app.UseEndpoints(endpoints =>
             {
-            endpoints.MapControllerRoute(
-                    name: "Huazimi",
-                    pattern: "{controller=Huazimi}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute(
-                    name: "Klienti",
-                    pattern: "{controller=Klienti}/{action=Index}/{id?}");
-                endpoints.MapControllerRoute(
-                    name: "Librat",
-                    pattern: "{controller=Librat}/{action=List}/{id?}");
+                     name: "default",
+                     pattern: "{controller=Libra}/{action=Index}/{id?}");
+
             });
-        }
+            
+            }
     }
 }

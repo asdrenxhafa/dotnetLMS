@@ -14402,6 +14402,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Rafti\\Index.cshtml",
+      "TargetPath": "Views\\Rafti\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Areas\\Identity\\Pages\\Libra\\Details.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Libra\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -14412,8 +14422,48 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Klienti\\Index.cshtml",
+      "TargetPath": "Views\\Klienti\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Rezervimi\\Index.cshtml",
+      "TargetPath": "Views\\Rezervimi\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Huazimi\\Index.cshtml",
+      "TargetPath": "Views\\Huazimi\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Libra\\Create.cshtml",
+      "TargetPath": "Views\\Libra\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Areas\\Identity\\Pages\\Libra\\Index.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Libra\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Libra\\Index.cshtml",
+      "TargetPath": "Views\\Libra\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Areas\\Identity\\Pages\\Libra\\Delete.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Libra\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Pagesa\\Index.cshtml",
+      "TargetPath": "Views\\Pagesa\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14427,8 +14477,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Areas\\Identity\\Pages\\Libra\\Create.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Libra\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Areas\\Identity\\Pages\\Libra\\Edit.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Libra\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Libra\\Edit.cshtml",
+      "TargetPath": "Views\\Libra\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Huazimi\\Details.cshtml",
+      "TargetPath": "Views\\Huazimi\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
