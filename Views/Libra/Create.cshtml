@@ -5,15 +5,15 @@
 
 <h2>Create</h2>
 
-<form class="form" href="@Url.Action("Store")" method="post">
+<form class="form" asp-action="Create" method="post">
     <div class="form-group">
         <label>Titulli:</label>
-        <input type="text" name="Titulli"/> <br>
-     
+        <input type="text" name="Titulli" /> <br>
+        <span></span>
     </div>
     <div class="form-group">
         <label>Autori:</label>
-        <input type="text" name="Autori"/>
+        <input type="text" name="Autori" />
     </div>
     <input class="btn btn-primary" type="submit" value="Submit" />
 </form>

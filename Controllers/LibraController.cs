@@ -49,8 +49,8 @@ namespace Libraryms.Controllers
         }
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        public async Task<IActionResult> Store(
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(
             [Bind("Titulli,Autori")] Libra libra)
         {
             try
@@ -74,6 +74,8 @@ namespace Libraryms.Controllers
         }
 
         // GET: Movies/Edit/5
+        [HttpGet]
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -85,6 +87,38 @@ namespace Libraryms.Controllers
             if (libra == null)
             {
                 return NotFound();
+            }
+            return View(libra);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Titulli,Autori")] Libra libra)
+        {
+            if (id != libra.id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(libra);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    //if (!LibraExists(libra.id))
+                    //{
+                    //    return NotFound();
+                    //}
+                    //else
+                    //{
+                        throw;
+                    //}
+                }
+                return RedirectToAction("Index");
             }
             return View(libra);
         }
@@ -107,14 +141,6 @@ namespace Libraryms.Controllers
         {
 
             return RedirectToAction("List");
-        }
-
-        [HttpPost]
-        public IActionResult Edit(Libra item)
-        {
-            
-                return View(item);
-           
         }
     }
 }
