@@ -1,105 +1,83 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Libraryms.Models;
+using Libraryms.Data;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace Libraryms.Controllers
 {
     public class KlientiController : Controller
     {
-       
-        public IActionResult Index()
+        private readonly LibrarymsContext _context;
+
+        public KlientiController(LibrarymsContext context)
         {
-            //return View(Data.KlientiList);
-            return View();
+            _context = context;
+        }
+        public async Task<IActionResult> IndexAsync()
+        {
+            return View(await _context.Klienti.ToListAsync());
         }
 
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var klientet = await _context.Klienti
+                .FirstOrDefaultAsync(m => m.id == id);
+
+            if (klientet == null)
+            {
+                return NotFound();
+            }
+
+            return View(klientet);
+        }
+        [HttpPost]
+        public IActionResult Create(Klienti item)
+        {
+            return View();
+        }
 
         [HttpGet]
-        public IActionResult Create()
+        public IActionResult Edit(int id)
         {
+
             return View();
         }
 
-      
-        //[HttpPost]
-        //public IActionResult Create(Klienti klienti)
-        //{
-        //    /*
-        //    if (ModelState.IsValid)
-        //    {
-        //        klienti.Id = Guid.NewGuid();
-        //        Data.KlientiList.Add(klienti);
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            return RedirectToAction("List");
+        }
 
-        //        return RedirectToAction("Index");
-        //    }
-        //    else
-        //    {
-        //        return View();
-        //    }
-        //    */
-        //}
+        [HttpGet]
+        public IActionResult Complete(int id)
+        {
 
-        //[HttpGet]
-        //public IActionResult Edit(Guid id)
-        //{
-        //    /*
-        //    var item = Data.KlientiList.SingleOrDefault(x => x.Id == id);
+            return RedirectToAction("List");
+        }
 
-        //    return View(item);
-        //    */
-        //}
+        [HttpGet]
+        public IActionResult Undo(int id)
+        {
 
-        //[HttpGet]
-        //public IActionResult Delete(Guid id)
-        //{
-        //    /*
-        //    var item = Data.KlientiList.SingleOrDefault(x => x.Id == id);
-        //    Data.KlientiList.Remove(item);
+            return RedirectToAction("List");
+        }
 
-        //    return RedirectToAction("Index");
-        //    */
-        //}
-        //[HttpGet]
-        //public IActionResult Complete(Guid id)
-        //{
-        //    /*
-        //    var item = Data.KlientiList.SingleOrDefault(x => x.Id == id);
-        //    item.Aktiv = true;
+        [HttpPost]
+        public IActionResult Edit(Klienti item)
+        {
 
-        //    return RedirectToAction("Index");
-        //    */
-        //}
-        //[HttpGet]
-        //public IActionResult Undo(Guid id)
-        //{
-        //    /*
-        //    var item = Data.KlientiList.SingleOrDefault(x => x.Id == id);
-        //    item.Aktiv = false;
+            return View(item);
 
-        //    return RedirectToAction("Index");
-        //    */
-        //}
-        //[HttpPost]
-        //public IActionResult Edit(Klienti item)
-        //{
-        //    /*
-        //    if (ModelState.IsValid)
-        //    {
-        //        var origianlItem = Data.KlientiList.SingleOrDefault(x => x.Id == item.Id);
-        //        origianlItem.Emri = item.Emri;
-        //        origianlItem.Email = item.Email;
-        //        origianlItem.NumriTel = item.NumriTel;
-        //        return RedirectToAction("List");
-        //    }
-        //    else
-        //    {
-        //        return View(item);
-        //    }
-        //    */
-        //}
+        }
     }
 }

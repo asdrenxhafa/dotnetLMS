@@ -14,10 +14,12 @@ namespace Libraryms.Data
             context.Database.EnsureCreated();
 
             // Look for any students.
-            if (context.Libra.Any())
+            if (context.Libra.Any() || context.Klienti.Any())
             {
                 return;   // DB has been seeded
             }
+
+
 
             var lirbat = new Libra[]
             {
@@ -28,8 +30,17 @@ namespace Libraryms.Data
                 context.Libra.Add(s);
             }
             context.SaveChanges();
-           
-            
+
+            var klientet = new Klienti[]
+            {
+                new Klienti{Emri="Leutrim Ahmeti" , Email="la43824@ubt-uni.net" , Aktiv=true ,NumriTel="044444444"}
+            };
+            foreach (Klienti k in klientet)
+            {
+                context.Klienti.Add(k);
+            }
+            context.SaveChanges();
+
         }
 
     }
