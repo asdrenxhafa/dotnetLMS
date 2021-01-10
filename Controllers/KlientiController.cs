@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Libraryms.Models;
 using Libraryms.Data;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
-
 namespace Libraryms.Controllers
 {
     public class KlientiController : Controller
@@ -56,13 +55,37 @@ namespace Libraryms.Controllers
             }
             return View(k);
         }
-       
-        public IActionResult Create(Klienti item)
+       [HttpGet]
+        public IActionResult Create()
         {
             return View();
         }
 
- 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(
+            [Bind("Emri,Email,NumriTel,Aktiv")] Klienti k)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _context.Add(k);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            catch (DbUpdateException /* ex */)
+            {
+                //Log the error (uncomment ex variable name and write a log.
+                ModelState.AddModelError("", "Unable to save changes. " +
+                    "Try again, and if the problem persists " +
+                    "see your system administrator.");
+            }
+            return View(k);
+
+        }
+
 
         [HttpGet]
         public IActionResult Delete(int id)
