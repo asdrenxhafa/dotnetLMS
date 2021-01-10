@@ -42,10 +42,34 @@ namespace Libraryms.Controllers
             return View(libra);
         }
 
-        [HttpPost]
-        public IActionResult Create(Libra item)
+        [HttpGet]
+        public IActionResult Create()
         {
-            return View(); 
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Store(
+            [Bind("Titulli,Autori")] Libra libra)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _context.Add(libra);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            catch (DbUpdateException /* ex */)
+            {
+                //Log the error (uncomment ex variable name and write a log.
+                ModelState.AddModelError("", "Unable to save changes. " +
+                    "Try again, and if the problem persists " +
+                    "see your system administrator.");
+            }
+            return RedirectToPage("/libra");
         }
 
         [HttpGet]
