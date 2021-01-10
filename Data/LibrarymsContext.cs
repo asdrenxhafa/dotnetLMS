@@ -9,15 +9,19 @@ namespace Libraryms.Data
 {
     public class LibrarymsContext : DbContext
     {
-        public LibrarymsContext (DbContextOptions<LibrarymsContext> options)
+        public LibrarymsContext(DbContextOptions<LibrarymsContext> options)
             : base(options)
         { }
 
         public DbSet<Libraryms.Models.Libra> Libra { get; set; }
 
+        public DbSet<Libraryms.Models.Klienti> Klienti { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Libra>().ToTable("Libra");
+            modelBuilder.Entity<Klienti>().ToTable("Klientet");
         }
     }
 }

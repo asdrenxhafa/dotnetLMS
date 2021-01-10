@@ -49,7 +49,7 @@ namespace Libraryms.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Store(
             [Bind("Titulli,Autori")] Libra libra)
         {
@@ -69,14 +69,24 @@ namespace Libraryms.Controllers
                     "Try again, and if the problem persists " +
                     "see your system administrator.");
             }
-            return RedirectToPage("/libra");
+            return View(libra);
+
         }
 
-        [HttpGet]
-        public IActionResult Edit(int id)
+        // GET: Movies/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-            return View();
+            var libra = await _context.Libra.FindAsync(id);
+            if (libra == null)
+            {
+                return NotFound();
+            }
+            return View(libra);
         }
 
         [HttpGet]

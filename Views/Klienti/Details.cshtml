@@ -1,0 +1,19 @@
+﻿@model Libraryms.Models.Klienti
+@{   
+ViewData["Title"] = "Index";
+}
+<div>
+    <table class="table">
+        <tr>
+            <td>@Model.id</td>
+            <td>@Model.Emri</td>
+            <td>@Model.Email</td>
+            <td>@Model.NumriTel</td>
+            <td>@Model.Aktiv</td>
+            <td>@Model.created_at</td>
+            <td>@Model.deleted_at</td>
+
+        </tr>
+    </table>
+</div>
+
