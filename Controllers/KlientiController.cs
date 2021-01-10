@@ -40,17 +40,29 @@ namespace Libraryms.Controllers
             return View(klientet);
         }
         [HttpPost]
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var k = await _context.Klienti.FindAsync(id);
+            if (k == null)
+            {
+                return NotFound();
+            }
+            return View(k);
+        }
+       
         public IActionResult Create(Klienti item)
         {
             return View();
         }
 
-        [HttpGet]
-        public IActionResult Edit(int id)
-        {
-
-            return View();
-        }
+ 
 
         [HttpGet]
         public IActionResult Delete(int id)
