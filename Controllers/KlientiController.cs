@@ -38,10 +38,10 @@ namespace Libraryms.Controllers
 
             return View(klientet);
         }
-        [HttpPost]
+      
 
-        [HttpGet]
-        public async Task<IActionResult> Edit(int id)
+   
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -55,7 +55,41 @@ namespace Libraryms.Controllers
             }
             return View(k);
         }
-       [HttpGet]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("id,Emri,Email,NumriTel,Aktiv,created_at,deleted_at")] Klienti k)
+        {
+            if (id != k.id)
+            {
+            return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(k);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!KlientiExists(k.id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+
+                        throw;
+
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(k);
+        }
+
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
@@ -86,33 +120,37 @@ namespace Libraryms.Controllers
 
         }
 
-
-        [HttpGet]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int? id)
         {
-            return RedirectToAction("List");
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var k = await _context.Klienti
+                .FirstOrDefaultAsync(m => m.id == id);
+            if (k == null)
+            {
+                return NotFound();
+            }
+
+            return View(k);
         }
 
-        [HttpGet]
-        public IActionResult Complete(int id)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-
-            return RedirectToAction("List");
+            var k = await _context.Klienti.FindAsync(id);
+            _context.Klienti.Remove(k);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
-        [HttpGet]
-        public IActionResult Undo(int id)
+
+        private bool KlientiExists(int id)
         {
-
-            return RedirectToAction("List");
-        }
-
-        [HttpPost]
-        public IActionResult Edit(Klienti item)
-        {
-
-            return View(item);
-
+            return _context.Klienti.Any(e => e.id == id);
         }
     }
 }

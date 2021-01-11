@@ -27,6 +27,7 @@
                         <th>Email</th>
                         <th>NumriTel</th>
                         <th>Aktiv</th>
+                        <th>Created</th>
 
                     </tr>
                 </thead>
@@ -37,6 +38,7 @@
                         <th>Email</th>
                         <th>NumriTel</th>
                         <th>Aktiv</th>
+                        <th>Created</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -48,6 +50,7 @@
                             <td>@Html.DisplayFor(model => item.Email)</td>
                             <td>@Html.DisplayFor(model => item.NumriTel)</td>
                             <td>@Html.DisplayFor(model => item.Aktiv)</td>
+                            <td>@Html.DisplayFor(model => item.created_at)</td>
                             <td>
                                 <a class="btn btn-primary" href="@Url.Action("Edit", new { id = item.id })">Edit</a>
                                 <a class="btn btn-danger" href="@Url.Action("Details", new { id = item.id })">Details</a>
