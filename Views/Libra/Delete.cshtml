@@ -1,0 +1,30 @@
+﻿@model Libraryms.Models.Libra
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Libra</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayFor(model => model.Titulli)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Autori)
+        </dd>
+        <dt>
+            @Html.DisplayFor(model => model.E_Lire)
+        </dt>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

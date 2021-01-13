@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj": {}
+    "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj": {
+    "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj",
+        "projectUniqueName": "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj",
         "projectName": "Libraryms",
-        "projectPath": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj",
-        "packagesPath": "C:\\Users\\leu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\obj\\",
+        "projectPath": "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj",
+        "packagesPath": "C:\\Users\\Asdren\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Asdren\\Desktop\\Libraryms\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\leu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Asdren\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
@@ -89,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

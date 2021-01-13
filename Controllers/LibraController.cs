@@ -109,38 +109,51 @@ namespace Libraryms.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    //if (!LibraExists(libra.id))
-                    //{
-                    //    return NotFound();
-                    //}
-                    //else
-                    //{
+                    if (!LibraExists(libra.id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
                         throw;
-                    //}
+                    }
                 }
                 return RedirectToAction("Index");
             }
             return View(libra);
         }
 
-        [HttpGet]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int? id)
         {
-            return RedirectToAction("List");
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var l = await _context.Libra
+                .FirstOrDefaultAsync(m => m.id == id);
+            if (l == null)
+            {
+                return NotFound();
+            }
+
+            return View(l);
         }
 
-        [HttpGet]
-        public IActionResult Complete(int id)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            
-            return RedirectToAction("List");
+            var l = await _context.Libra.FindAsync(id);
+            _context.Libra.Remove(l);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
-        [HttpGet]
-        public IActionResult Undo(int id)
+        private bool LibraExists(int id)
         {
-
-            return RedirectToAction("List");
+            return _context.Libra.Any(e => e.id == id);
         }
+
     }
 }

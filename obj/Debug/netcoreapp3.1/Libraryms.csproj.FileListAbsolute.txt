@@ -407,3 +407,5 @@ C:\Users\leu\Source\Repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.genruntime
 C:\Users\leu\Source\Repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Klienti\Details.cshtml.g.cs
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Klienti\Details.cshtml.g.cs
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Klienti\Delete.cshtml.g.cs
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Klienti\Delete.cshtml.g.cs
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Libra\Delete.cshtml.g.cs
