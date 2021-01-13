@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Libraryms.Models;
 using Libraryms.Data;
+using Libraryms.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Libraryms.Controllers
@@ -19,9 +20,53 @@ namespace Libraryms.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> Index(
+                string sortOrder,
+                string currentFilter,
+                string searchString,
+                int? pageNumber)
         {
-            return View(await _context.Libra.ToListAsync());
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            //ViewData["CurrentFilter"] = searchString;
+
+            var librat = from s in _context.Libra
+                    select s;
+
+            //if (!String.IsNullOrEmpty(searchString))
+            //{
+            //    librat = librat.Where(s => s.Titulli.Contains(searchString)
+            //                           || s.Autori.Contains(searchString));
+            //}
+            //switch (sortOrder)
+            //{
+            //    case "name_desc":
+            //        lirbat = librat.OrderByDescending(s => s.Titulli);
+            //        break;
+            //    case "Date":
+            //        librat = students.OrderBy(s => s.EnrollmentDate);
+            //        break;
+            //    case "date_desc":
+            //        students = students.OrderByDescending(s => s.EnrollmentDate);
+            //        break;
+            //    default:
+            //        students = students.OrderBy(s => s.LastName);
+            //        break;
+            //}
+
+            int pageSize = 3;
+            return View(await PaginatedList<Libra>.CreateAsync(librat.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         public async Task<IActionResult> Details(int? id)
