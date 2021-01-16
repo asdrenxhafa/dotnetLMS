@@ -10,25 +10,27 @@
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Librat</h1>
 
-<a class="btn btn-primary" asp-action="Create">Create new</a>
-
-
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
+        <div class="float-right">
+            <a class="btn btn-primary" asp-action="Create">Create new</a>
+        </div>
         <h6 class="m-0 font-weight-bold text-primary"></h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <form asp-action="Index" method="get">
-                <div class="form-actions no-color">
-                    <p>
-                        Find by name: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
-                        <input type="submit" value="Search" class="btn btn-default" /> |
-                        <a asp-action="Index">Back to Full List</a>
-                    </p>
-                </div>
-            </form>
+            <div class="float-right">
+                <form asp-action="Index" method="get">
+                    <div class="form-actions no-color">
+                        <p>
+                            Find by name: <input type="text" name="SearchString" class="form-control form-control-sm" value="@ViewData["CurrentFilter"]" />
+                            <input type="submit" value="Search" class="btn btn-default" /> |
+                            <a asp-action="Index">Back to Full List</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
@@ -48,18 +50,19 @@
                         <th>Veprime</th>
                     </tr>
                 </tfoot>
-                <tbody @foreach (var item in Model) {<tr>
-                            <td>@Html.DisplayFor(model => item.id)</td>
-                            <td>@Html.DisplayFor(model => item.Titulli)</td>
-                            <td>@Html.DisplayFor(model => item.Autori)</td>
-                            <td>@Html.DisplayFor(model => item.E_Lire)</td>
-                            <td>
-                                <a class="btn btn-primary" href="@Url.Action("Edit",new { id = item.id })">Edit</a>
-                                <a class="btn btn-danger" href="@Url.Action("Details",new { id = item.id })">Details</a>
-                                <a class="btn btn-danger" href="@Url.Action("Delete",new { id = item.id })">Delete</a>
-                            </td>
-                        </tr>
-                        }
+                <tbody @foreach (var item in Model)
+                {<tr>
+                    <td>@Html.DisplayFor(model => item.id)</td>
+                    <td>@Html.DisplayFor(model => item.Titulli)</td>
+                    <td>@Html.DisplayFor(model => item.Autori)</td>
+                    <td>@Html.DisplayFor(model => item.E_Lire)</td>
+                    <td>
+                    <a class="btn btn-primary" href="@Url.Action("Edit", new { id = item.id })">Edit</a>
+                    <a class="btn btn-danger" href="@Url.Action("Details", new { id = item.id })">Details</a>
+                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.id })">Delete</a>
+                    </td>
+                    </tr>
+                }
                 </tbody>
             </table>
         </div>
@@ -69,18 +72,28 @@
         var nextDisabled = !Model.HasNextPage ? "disabled" : "";
     }
 
-    <a asp-action="Index"
-       asp-route-sortOrder="@ViewData["CurrentSort"]"
-       asp-route-pageNumber="@(Model.PageIndex - 1)"
-       asp-route-currentFilter="@ViewData["CurrentFilter"]"
-       class="btn btn-default @prevDisabled">
-        Previous
-    </a>
-    <a asp-action="Index"
-       asp-route-sortOrder="@ViewData["CurrentSort"]"
-       asp-route-pageNumber="@(Model.PageIndex + 1)"
-       asp-route-currentFilter="@ViewData["CurrentFilter"]"
-       class="btn btn-default @nextDisabled">
-        Next
-    </a>
+    <div class="pr-4">
+        <ul style="display: flex; float:right; list-style: none; border-radius: .35rem">
+            <li class="paginate_button page-item previous" id="dataTable_previous">
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-pageNumber="@(Model.PageIndex - 1)"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   aria-controls="dataTable" data-dt-idx="1"
+                   class="btn page-link @prevDisabled">
+                    Previous
+                </a>
+            </li>
+            <li class="paginate_button page-item next" id="dataTable_next">
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-pageNumber="@(Model.PageIndex + 1)"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   aria-controls="dataTable" data-dt-idx="2"
+                   class="btn page-link @nextDisabled">
+                    Next
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>

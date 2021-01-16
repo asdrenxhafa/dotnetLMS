@@ -14462,6 +14462,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Klienti\\Details.cshtml",
+      "TargetPath": "Views\\Klienti\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Areas\\Identity\\Pages\\Libra\\Delete.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Libra\\Delete.cshtml",
       "FileKind": "mvc"
@@ -14474,6 +14479,11 @@
     {
       "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Libra\\Details.cshtml",
+      "TargetPath": "Views\\Libra\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14514,6 +14524,16 @@
     {
       "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Libra\\Delete.cshtml",
+      "TargetPath": "Views\\Libra\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Asdren\\Desktop\\Libraryms\\Views\\Klienti\\Delete.cshtml",
+      "TargetPath": "Views\\Klienti\\Delete.cshtml",
       "FileKind": "mvc"
     }
   ],

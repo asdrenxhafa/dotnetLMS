@@ -1,19 +1,32 @@
 ﻿
-@{ 
+@{
     ViewData["Title"] = "Create";
 }
 
 <h2>Create</h2>
 
-<form class="form" asp-action="Create" method="post">
-    <div class="form-group">
-        <label>Titulli:</label>
-        <input type="text" name="Titulli" /> <br>
-        <span></span>
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form class="form" asp-action="Create" method="post">
+            <div class="modal-header">
+                <h4 class="modal-title">Edito Automjetin</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="window.location='/libra';">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Titulli:</label>
+                    <input name="Titulli" id="Titulli" type="text" class="form-control" value="" required>
+                </div>
+                <div class="form-group">
+                    <label>Autori</label>
+                    <input name="Autori" id="Autori" type="text" class="form-control" value="" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-default" value="Anulo" onclick="window.location='/libra';">
+                <input type="submit" value="Create" class="btn btn-primary float-right">
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        <label>Autori:</label>
-        <input type="text" name="Autori" />
-    </div>
-    <input class="btn btn-primary" type="submit" value="Submit" />
-</form>
+</div>
