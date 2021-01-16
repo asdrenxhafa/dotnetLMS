@@ -28,6 +28,10 @@ namespace Libraryms.Controllers
             ViewData["CurrentSort"] = sortOrder;
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewData["CurrentFilter"] = searchString;
+
+            var librat = from s in _context.Libra
+                         select s;
 
             if (searchString != null)
             {
@@ -38,16 +42,11 @@ namespace Libraryms.Controllers
                 searchString = currentFilter;
             }
 
-            //ViewData["CurrentFilter"] = searchString;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                librat = librat.Where(s => s.Titulli.Contains(searchString) || s.Autori.Contains(searchString));
+            }
 
-            var librat = from s in _context.Libra
-                    select s;
-
-            //if (!String.IsNullOrEmpty(searchString))
-            //{
-            //    librat = librat.Where(s => s.Titulli.Contains(searchString)
-            //                           || s.Autori.Contains(searchString));
-            //}
             //switch (sortOrder)
             //{
             //    case "name_desc":
