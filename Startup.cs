@@ -12,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Libraryms.Data;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace Libraryms
 {
@@ -28,6 +30,28 @@ namespace Libraryms
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddIdentity<IdentityUser, IdentityRole>(config =>
+            {
+                config.Password.RequiredLength = 6;
+                config.Password.RequireDigit = false;
+                config.Password.RequireNonAlphanumeric = false;
+                config.Password.RequireUppercase = false;
+                config.SignIn.RequireConfirmedAccount = false;
+                config.User.RequireUniqueEmail = true;
+              
+            })
+                .AddDefaultTokenProviders()
+                .AddEntityFrameworkStores<LibrarymsContext>();
+            services.ConfigureApplicationCookie(options => options.LoginPath = "/Home/Login");
+            services.AddMvc(options =>
+            {
+                var policy = new AuthorizationPolicyBuilder()
+                                 .RequireAuthenticatedUser()
+                                 .Build();
+                options.Filters.Add(new AuthorizeFilter(policy));
+            }).AddXmlSerializerFormatters();
+
 
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -62,7 +86,7 @@ namespace Libraryms
             {
                 endpoints.MapControllerRoute(
                      name: "default",
-                     pattern: "{controller=Libra}/{action=Index}/{id?}");
+                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
             });
             

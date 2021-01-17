@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Libraryms.Models;
 using Libraryms.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Libraryms.Controllers
 {
+    
     public class LibraController : Controller
     {
 

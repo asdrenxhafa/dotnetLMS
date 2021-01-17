@@ -6,12 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Libraryms.Models;
 using Libraryms.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+
 namespace Libraryms.Controllers
 {
+    
     public class KlientiController : Controller
     {
         private readonly LibrarymsContext _context;
-
+        
         public KlientiController(LibrarymsContext context)
         {
             _context = context;
@@ -40,7 +43,7 @@ namespace Libraryms.Controllers
         }
       
 
-   
+       
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -57,6 +60,7 @@ namespace Libraryms.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+       
         public async Task<IActionResult> Edit(int id, [Bind("id,Emri,Email,NumriTel,Aktiv,created_at,deleted_at")] Klienti k)
         {
             if (id != k.id)
@@ -90,6 +94,7 @@ namespace Libraryms.Controllers
         }
 
         [HttpGet]
+      
         public IActionResult Create()
         {
             return View();
@@ -97,6 +102,7 @@ namespace Libraryms.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> Create(
             [Bind("Emri,Email,NumriTel,Aktiv")] Klienti k)
         {
@@ -119,7 +125,7 @@ namespace Libraryms.Controllers
             return View(k);
 
         }
-
+        
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -139,6 +145,7 @@ namespace Libraryms.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var k = await _context.Klienti.FindAsync(id);
