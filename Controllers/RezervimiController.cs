@@ -18,9 +18,15 @@ namespace Libraryms.Controllers
         {
             _context = context;
         }
-        public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> Index(
+            int? pageNumber)
         {
-            return View(await _context.Rezervimi.ToListAsync());
+
+            var rezervimet = from s in _context.Rezervimi
+                           select s;
+
+            int pageSize = 3;
+            return View(await PaginatedList<Rezervimi>.CreateAsync(rezervimet.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
         public async Task<IActionResult> Details(int? id)
         {
