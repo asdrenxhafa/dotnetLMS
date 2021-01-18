@@ -1,0 +1,25 @@
+﻿@model Rezervimi
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form class="form" asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Klienti:</label>
+        <input type="number" asp-for="Klienti_id" /> <br>
+
+    </div>
+    <div class="form-group">
+        <label>Libri:</label>
+        <input type="number" asp-for="Libra_id" />
+    </div>
+    <div class="form-group">
+        <label>Aktiv:</label>
+        <input type="checkbox" asp-for="Aktiv" />
+    </div>
+    <input class="btn btn-primary" type="submit" value="Submit" />
+</form>

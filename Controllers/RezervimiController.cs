@@ -140,7 +140,7 @@ namespace Libraryms.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var r = await _context.Rezervimi.FindAsync(id);
-            _context.Klienti.Remove(r);
+            _context.Rezervimi.Remove(r);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

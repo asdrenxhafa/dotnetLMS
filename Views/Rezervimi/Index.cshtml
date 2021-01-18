@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Libraryms.Models.Klienti>
+﻿@model IEnumerable<Libraryms.Models.Rezervimi>
 @{
     ViewData["Title"] = "Index";
 }
@@ -37,14 +37,21 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>101</td>
-                        <td>1</td>
-                        <td>1/18/2021</td>
-                        <td>1/18/2021</td>
-                        <td><button class="btn btn-primary" href="#">Edito</button></td>
-                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => item.id)</td>
+                            <td>@Html.DisplayFor(model => item.Klienti_id)</td>
+                            <td>@Html.DisplayFor(model => item.Librat_id)</td>
+                            <td>@Html.DisplayFor(model => item.Aktiv)</td>
+                            <td>@Html.DisplayFor(model => item.created_at)</td>
+                            <td>
+                                <a class="btn btn-primary" href="@Url.Action("Edit", new { id = item.id })">Edit</a>
+                                <a class="btn btn-primary" href="@Url.Action("Details", new { id = item.id })">Details</a>
+                                <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.id })">Delete</a>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>

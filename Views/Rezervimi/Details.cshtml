@@ -1,0 +1,17 @@
+﻿@model Libraryms.Models.Rezervimi
+@{
+    ViewData["Title"] = "Details";
+}
+<div>
+    <table class="table">
+        <tr>
+            <td>@Model.id</td>
+            <td>@Model.Klienti_id</td>
+            <td>@Model.Libra_id</td>     
+            <td>@Model.Aktiv</td>
+            <td>@Model.created_at</td>
+            <td>@Model.deleted_at</td>
+
+        </tr>
+    </table>
+</div>
