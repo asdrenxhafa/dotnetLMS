@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Libraryms.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,79 +10,31 @@ namespace Libraryms.Controllers
 {
     public class RezervimiController : Controller
     {
-        // GET: RezervimiController
-        public ActionResult Index()
-        {
-            return View();
-        }
+        private readonly LibrarymsContext _context;
 
-        // GET: RezervimiController/Details/5
-        public ActionResult Details(int id)
+        public RezervimiController(LibrarymsContext context)
         {
-            return View();
+            _context = context;
         }
-
-        // GET: RezervimiController/Create
-        public ActionResult Create()
+        public async Task<IActionResult> IndexAsync()
         {
-            return View();
+            return View(await _context.Rezervimi.ToListAsync());
         }
-
-        // POST: RezervimiController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> Details(int? id)
         {
-            try
+            if (id == null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: RezervimiController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
+            var klientet = await _context.Rezervimi
+                .FirstOrDefaultAsync(m => m.id == id);
 
-        // POST: RezervimiController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
+            if (klientet == null)
             {
-                return RedirectToAction(nameof(Index));
+                return NotFound();
             }
-            catch
-            {
-                return View();
-            }
-        }
 
-        // GET: RezervimiController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: RezervimiController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return View(rezervimet);
         }
     }
-}

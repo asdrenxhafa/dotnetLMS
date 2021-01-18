@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Libraryms.Models.Klienti>
 @{
     ViewData["Title"] = "Index";
 }
@@ -7,6 +7,8 @@
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Rezervimet</h1>
+
+<a class="btn btn-primary" asp-action="Create">Create new</a> <br />
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -18,31 +20,29 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Titulli</th>
-                        <th>Autori</th>
-                        <th>Rafti</th>
-                        <th>E Lire</th>
-                        <th>Veprime</th>
+                        <th>ID-Klienti</th>
+                        <th>ID-Libri</th>
+                        <th>Aktiv</th>
+                        <th>Created At</th>
+                        <th>Deleted At</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>#</th>
-                        <th>Titulli</th>
-                        <th>Autori</th>
-                        <th>Rafti</th>
-                        <th>E Lire</th>
-                        <th>Veprime</th>
+                        <th>ID-Klienti</th>
+                        <th>ID-Libri</th>
+                        <th>Aktiv</th>
+                        <th>Created At</th>
+                        <th>Deleted At</th>
                     </tr>
                 </tfoot>
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Asdren</td>
-                        <td>Asdren Xhafa</td>
-                        <td>61</td>
-                        <td>Po</td>
+                        <td>101</td>
+                        <td>1</td>
+                        <td>1/18/2021</td>
+                        <td>1/18/2021</td>
                         <td><button class="btn btn-primary" href="#">Edito</button></td>
                     </tr>
                 </tbody>

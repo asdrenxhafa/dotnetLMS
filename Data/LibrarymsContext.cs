@@ -18,12 +18,14 @@ namespace Libraryms.Data
         public DbSet<Libraryms.Models.Klienti> Klienti { get; set; }
 
         public DbSet<Libraryms.Models.Huazimi> Huazimi { get; set; }
+        public DbSet<Libraryms.Models.Rezervimi> Rezervimi { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Libra>().ToTable("Libra");
             modelBuilder.Entity<Klienti>().ToTable("Klientet");
             modelBuilder.Entity<Huazimi>().ToTable("Huazimi");
+            modelBuilder.Entity<Rezervimi>().ToTable("Rezervimi");
         }
     }
 }
