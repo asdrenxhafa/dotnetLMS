@@ -55,7 +55,7 @@ namespace Libraryms.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Klienti_id,Libra_id,Aktiv,created_at,deleted_at")] Rezervimi r)
+        public async Task<IActionResult> Edit(int id, [Bind("id,Klienti_id,Libra_id,Aktiv,created_at,deleted_at")] Rezervimi r)
         {
             if (id != r.id)
             {
@@ -97,7 +97,7 @@ namespace Libraryms.Controllers
         [ValidateAntiForgeryToken]
 
         public async Task<IActionResult> Create(
-            [Bind("Klienti_id,Libra_id,Aktiv")] Rezervimi r)
+            [Bind("id,Klienti_id,Libra_id,Aktiv")] Rezervimi r)
         {
             try
             {
