@@ -14,15 +14,50 @@ namespace Libraryms.Controllers
     public class KlientiController : Controller
     {
         private readonly LibrarymsContext _context;
+
+
         
         public KlientiController(LibrarymsContext context)
         {
             _context = context;
         }
-        public async Task<IActionResult> IndexAsync()
+
+        public async Task<IActionResult> Index(
+                string sortOrder,
+                string currentFilter,
+                string searchString,
+                int? pageNumber)
         {
-            return View(await _context.Klienti.ToListAsync());
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewData["CurrentFilter"] = searchString;
+
+            var klientet = from s in _context.Klienti
+                         select s;
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                klientet = klientet.Where(s => s.Emri.Contains(searchString) || s.Email.Contains(searchString));
+            }
+
+            int pageSize = 3;
+            return View(await PaginatedList<Klienti>.CreateAsync(klientet.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
+
+        //public async Task<IActionResult> IndexAsync()
+        //{
+        //    return View(await _context.Klienti.ToListAsync());
+        //}
 
         public async Task<IActionResult> Details(int? id)
         {

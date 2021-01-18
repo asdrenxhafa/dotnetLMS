@@ -1,4 +1,7 @@
-﻿@model IEnumerable<Libraryms.Models.Klienti>
+﻿@using Libraryms.Data;
+
+
+@model PaginatedList<Libraryms.Models.Klienti>
 
 @{
     ViewData["Title"] = "Index";
@@ -61,6 +64,35 @@
                 </tbody>
             </table>
         </div>
+    </div>
+    @{
+        var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+    }
+
+    <div class="pr-4">
+        <ul style="display: flex; float:right; list-style: none; border-radius: .35rem">
+            <li class="paginate_button page-item previous" id="dataTable_previous">
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-pageNumber="@(Model.PageIndex - 1)"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   aria-controls="dataTable" data-dt-idx="1"
+                   class="btn page-link @prevDisabled">
+                    Previous
+                </a>
+            </li>
+            <li class="paginate_button page-item next" id="dataTable_next">
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-pageNumber="@(Model.PageIndex + 1)"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   aria-controls="dataTable" data-dt-idx="2"
+                   class="btn page-link @nextDisabled">
+                    Next
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
 
