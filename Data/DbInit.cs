@@ -41,6 +41,16 @@ namespace Libraryms.Data
             }
             context.SaveChanges();
 
+            var rezervimi = new Rezervimi[]
+           {
+                new Rezervimi{Klienti_id=1 , Libra_id=2 , Aktiv=true}
+           };
+            foreach (Rezervimi r in rezervimi)
+            {
+                context.Rezervimi.Add(r);
+            }
+            context.SaveChanges();
+
         }
 
     }
