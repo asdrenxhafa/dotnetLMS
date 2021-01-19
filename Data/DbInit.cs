@@ -1,4 +1,5 @@
 ﻿using Libraryms.Models;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,12 @@ namespace Libraryms.Data
         {
             context.Database.EnsureCreated();
 
-            // Look for any students.
-            if (context.Libra.Any() || context.Klienti.Any())
+            //Look for any students.
+            if (context.Libra.Any() || context.Klienti.Any() || context.Roles.Any())
             {
-                return;   // DB has been seeded
+               return;   // DB has been seeded
             }
+            
 
 
 
@@ -33,7 +35,7 @@ namespace Libraryms.Data
 
             var klientet = new Klienti[]
             {
-                new Klienti{Emri="Leutrim Ahmeti" , Email="la43824@ubt-uni.net" , Aktiv=true ,NumriTel="044444444"}
+                new Klienti{Emri="Leutrim Ahmeti" , Email="la43824@ubt-uni.net" , Aktiv=true ,NumriTel="044444444"},
             };
             foreach (Klienti k in klientet)
             {
@@ -51,7 +53,18 @@ namespace Libraryms.Data
             }
             context.SaveChanges();
 
-        }
+            var roles = new IdentityRole[] {
+                new IdentityRole{Name="Admin"},
+                new IdentityRole{Name="User"}
+            };
+            foreach(IdentityRole r in roles)
+            {
+                context.Roles.Add(r);
+            }
+            context.SaveChanges();
 
+
+           
+    }
     }
 }

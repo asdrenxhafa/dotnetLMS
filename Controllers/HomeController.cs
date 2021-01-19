@@ -44,7 +44,7 @@ namespace Libraryms.Controllers
         
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(Login model)
+        public async Task<IActionResult> Login(Login model , string returnUrl)
         {
 
             var user = await _userManager.FindByEmailAsync(model.Email);
@@ -56,7 +56,14 @@ namespace Libraryms.Controllers
 
                 if (signInresult.Succeeded)
                 {
-                    return RedirectToAction("Index", "home");
+                    if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "home");
+                    }
                 }
 
                     ModelState.AddModelError(string.Empty,"Invalid Login Attempt");

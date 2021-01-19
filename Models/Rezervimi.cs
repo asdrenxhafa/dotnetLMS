@@ -12,8 +12,8 @@ namespace Libraryms.Models
         public int id { get; set; }
 
         [Required]
-  
         public int Klienti_id { get; set; }
+        [Required]
         public int Libra_id { get; set; }
         public bool Aktiv { get; set; }
         public DateTime created_at { get; set; }
