@@ -99,6 +99,27 @@ namespace Libraryms.Controllers
             return View();
         }
 
+        public IActionResult Rezervo(int libriId)
+        {
+            Rezervimi rez = new Rezervimi();
+            rez.Klienti_id = 2; //Test
+            rez.Libra_id = libriId;
+            rez.Aktiv = true;
+            rez.created_at = DateTime.Now;
+            rez.deleted_at = DateTime.Now;
+            _context.Rezervimi.Add(rez);
+            _context.SaveChanges();
+
+            Libra libri = _context.Libra.Where(t => t.id == libriId).First();
+            libri.E_Lire = false;
+            _context.Libra.Update(libri);
+            _context.SaveChanges();
+
+                
+            //Me dergu ne imell
+            return RedirectToAction("Index");
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
 
@@ -109,6 +130,7 @@ namespace Libraryms.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    r.created_at = DateTime.Now;
                     _context.Add(r);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
