@@ -22,6 +22,8 @@ namespace Libraryms.Controllers
             _context = context;
         }
 
+        
+
         public async Task<IActionResult> Index(
                 string sortOrder,
                 string currentFilter,
@@ -93,9 +95,10 @@ namespace Libraryms.Controllers
             }
             return View(k);
         }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-       
         public async Task<IActionResult> Edit(int id, [Bind("id,Emri,Email,NumriTel,Aktiv,created_at,deleted_at")] Klienti k)
         {
             if (id != k.id)

@@ -15,9 +15,9 @@ namespace Libraryms.Models
         // [MinLength(5)]
         public string Emri { get; set; }
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
         public string NumriTel { get; set; }
-        [Required]
         public bool Aktiv { get; set; }
         public DateTime created_at { get; set; }
         public DateTime deleted_at { get; set; }
