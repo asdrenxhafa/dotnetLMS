@@ -54,7 +54,6 @@ C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Libraryms.TagHelpers.o
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Libraryms.RazorCoreGenerate.cache
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
@@ -849,3 +848,10 @@ C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\staticwebassets\Lib
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.dll
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.pdb
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.genruntimeconfig.cache
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Create.cshtml.g.cs
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Delete.cshtml.g.cs
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Details.cshtml.g.cs
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Edit.cshtml.g.cs
+C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Statistika\Index.cshtml.g.cs

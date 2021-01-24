@@ -13,6 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Statistika\asd.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Statistika\asd.cshtml" />
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 
