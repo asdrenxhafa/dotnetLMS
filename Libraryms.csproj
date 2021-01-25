@@ -35,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="images\" />
     <Folder Include="Services\" />
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>

@@ -812,8 +812,6 @@ C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Areas\Identit
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Libra\Index.cshtml.g.cs
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
-C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Huazimi\Details.cshtml.g.cs
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Huazimi\Index.cshtml.g.cs
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Klienti\Create.cshtml.g.cs
@@ -855,3 +853,6 @@ C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Details.cshtml.g.cs
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Edit.cshtml.g.cs
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Statistika\Index.cshtml.g.cs
+C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Statistika\Index.cshtml.g.cs
+C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
