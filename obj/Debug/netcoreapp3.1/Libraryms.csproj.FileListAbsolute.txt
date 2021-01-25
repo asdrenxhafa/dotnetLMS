@@ -627,11 +627,6 @@ C:\Users\Blerina\Desktop\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi
 C:\Users\Blerina\Desktop\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimis\Details.cshtml.g.cs
 C:\Users\Blerina\Desktop\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimis\Edit.cshtml.g.cs
 C:\Users\Blerina\Desktop\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimis\Index.cshtml.g.cs
-C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimis\Create.cshtml.g.cs
-C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimis\Delete.cshtml.g.cs
-C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimis\Details.cshtml.g.cs
-C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimis\Edit.cshtml.g.cs
-C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimis\Index.cshtml.g.cs
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Create.cshtml.g.cs
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Delete.cshtml.g.cs
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Details.cshtml.g.cs
@@ -856,3 +851,4 @@ C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Razor\Views\Statistika
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Statistika\Index.cshtml.g.cs
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
+C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Statistika\Index.cshtml.g.cs

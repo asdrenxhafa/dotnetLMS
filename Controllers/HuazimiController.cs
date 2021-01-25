@@ -2,25 +2,51 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Libraryms.Models;
+using Libraryms.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 
 namespace Libraryms.Controllers
 {
     public class HuazimiController : Controller
     {
         // GET: HuazimiController
-        public ActionResult Index()
-        {
-            // ViewData["Huazimi"] = products;
+        private readonly LibrarymsContext _context;
 
-            return View();
+        public HuazimiController(LibrarymsContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<IActionResult> Index(int? pageNumber)
+        { 
+            var huazimet = from s in _context.Huazimi
+                             select s;
+
+            int pageSize = 3;
+            return View(await PaginatedList<Huazimi>.CreateAsync(huazimet.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: HuazimiController/Details/5
-        public ActionResult Details(int id)
+        public async Task<IActionResult> Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var huazimi = await _context.Huazimi
+                .FirstOrDefaultAsync(m => m.id == id);
+
+            if (huazimi == null)
+            {
+                return NotFound();
+            }
+
+            return View(huazimi);
         }
 
         // GET: HuazimiController/Create
@@ -28,6 +54,8 @@ namespace Libraryms.Controllers
         {
             return View();
         }
+
+
 
         // POST: HuazimiController/Create
         [HttpPost]
@@ -45,24 +73,54 @@ namespace Libraryms.Controllers
         }
 
         // GET: HuazimiController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var r = await _context.Huazimi.FindAsync(id);
+            if (r == null)
+            {
+                return NotFound();
+            }
+            return View(r);
         }
 
         // POST: HuazimiController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(int id, [Bind("id,DataPritjes,DataKthimit,Klienti_id,Libra_id,Aktiv")] Huazimi r)
         {
-            try
+            if (id != r.id)
             {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(r);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!HuazimiExists(r.id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+
+                        throw;
+
+                    }
+                }
                 return RedirectToAction(nameof(Index));
             }
-            catch
-            {
-                return View();
-            }
+            return View(r);
         }
 
         // GET: HuazimiController/Delete/5
@@ -84,6 +142,11 @@ namespace Libraryms.Controllers
             {
                 return View();
             }
+        }
+
+        private bool HuazimiExists(int id)
+        {
+            return _context.Huazimi.Any(e => e.id == id);
         }
     }
 }
