@@ -124,24 +124,32 @@ namespace Libraryms.Controllers
         }
 
         // GET: HuazimiController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var r = await _context.Huazimi
+                .FirstOrDefaultAsync(m => m.id == id);
+            if (r == null)
+            {
+                return NotFound();
+            }
+
+            return View(r);
         }
 
         // POST: HuazimiController/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            var r = await _context.Huazimi.FindAsync(id);
+            _context.Huazimi.Remove(r);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         private bool HuazimiExists(int id)
