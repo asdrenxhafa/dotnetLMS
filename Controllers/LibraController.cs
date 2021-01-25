@@ -102,6 +102,7 @@ namespace Libraryms.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    libra.E_Lire = true;
                     _context.Add(libra);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));

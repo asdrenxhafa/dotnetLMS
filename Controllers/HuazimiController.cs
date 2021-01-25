@@ -54,76 +54,46 @@ namespace Libraryms.Controllers
         {
             return View();
         }
-
-
-
-        // POST: HuazimiController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult Huazo(int libriId)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            Huazimi huazimi = new Huazimi();
+            huazimi.DataPritjes = DateTime.Now.AddMonths(1) ;
+            huazimi.DataKthimit = DateTime.Now;
+            huazimi.Klienti_id = 1;
+            huazimi.Libra_id = libriId;
+            huazimi.Aktiv = true;
+            _context.Huazimi.Add(huazimi);
+            _context.SaveChanges();
+
+            Libra libri = _context.Libra.Where(t => t.id == libriId).First();
+            libri.E_Lire = false;
+            _context.Libra.Update(libri);
+            _context.SaveChanges();
+
+
+            
+            return RedirectToAction("Index");
         }
 
-        // GET: HuazimiController/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Kthe(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            Huazimi huazimi = _context.Huazimi.Where(t => t.id == id).First();
+            huazimi.DataKthimit = DateTime.Now;
+            huazimi.Aktiv = false;
+            _context.Huazimi.Update(huazimi);
+            _context.SaveChanges();
 
-            var r = await _context.Huazimi.FindAsync(id);
-            if (r == null)
-            {
-                return NotFound();
-            }
-            return View(r);
+
+            Libra libri = _context.Libra.Where(t => t.id == huazimi.Libra_id).First();
+            libri.E_Lire = true;
+            _context.Libra.Update(libri);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
-        // POST: HuazimiController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,DataPritjes,DataKthimit,Klienti_id,Libra_id,Aktiv")] Huazimi r)
-        {
-            if (id != r.id)
-            {
-                return NotFound();
-            }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(r);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!HuazimiExists(r.id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-
-                        throw;
-
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(r);
-        }
-
-        // GET: HuazimiController/Delete/5
+   
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
