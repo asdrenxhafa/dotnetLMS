@@ -55,16 +55,6 @@ namespace Libraryms.Data
             }
             context.SaveChanges();
 
-            //var roles = new IdentityRole[] {
-            //    new IdentityRole{Name="Admin"},
-            //    new IdentityRole{Name="User"}
-            //};
-            //foreach(IdentityRole r in roles)
-            //{
-            //    context.Roles.Add(r);
-            //}
-            //context.SaveChanges();
-
             var pagesa = new Pagesa[]
            {
                 new Pagesa{ shuma="5euro" , Klienti_id="1" , Active=true}
@@ -75,12 +65,6 @@ namespace Libraryms.Data
             }
             context.SaveChanges();
 
-<<<<<<< HEAD
-            
-
-
-=======
->>>>>>> 192f82432639aa952d8eff852de6bfe4f86caee5
 
         }
     }

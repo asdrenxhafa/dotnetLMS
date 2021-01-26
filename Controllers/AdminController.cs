@@ -98,7 +98,7 @@ namespace Libraryms.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditUsersInRole(List<UserRole> model,string roleId)
+        public async Task<IActionResult> EditUsersInRole(List<UserRole> model, string roleId)
         {
             var role = await roleManager.FindByIdAsync(roleId);
 
@@ -108,13 +108,13 @@ namespace Libraryms.Controllers
             }
 
 
-            for(int i = 0; i < model.Count; i++)
+            for (int i = 0; i < model.Count; i++)
             {
                 var user = await userManager.FindByIdAsync(model[i].UserId);
 
                 IdentityResult result = null;
 
-                if (model[i].isSelected && !(await userManager.IsInRoleAsync(user,role.Name)))
+                if (model[i].isSelected && !(await userManager.IsInRoleAsync(user, role.Name)))
                 {
                     result = await userManager.AddToRoleAsync(user, role.Name);
                 }
@@ -135,10 +135,10 @@ namespace Libraryms.Controllers
                 }
             }
 
-            return RedirectToAction("Roles");
+           return RedirectToAction("Roles");
 
-          
 
+         
             
         }
     }
