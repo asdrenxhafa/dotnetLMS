@@ -1,4 +1,7 @@
-﻿
+﻿@using Libraryms.Data;
+
+@*@model PaginatedList<Libraryms.Models.Pagesa>*@
+@model Libraryms.Models.Pagesa;
 @{
     ViewData["Title"] = "Index";
 }
@@ -37,17 +40,55 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Asdren</td>
-                        <td>Asdren Xhafa</td>
-                        <td>61</td>
-                        <td>Po</td>
-                        <td><button class="btn btn-primary" href="#">Edito</button></td>
-                    </tr>
+                    @*@foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => item.id)</td>
+                            <td>@Html.DisplayFor(model => item.shuma)</td>
+                            <td>@Html.DisplayFor(model => item.Klienti_id)</td>
+                            <td>@Html.DisplayFor(model => item.Active)</td>
+                            <td>@Html.DisplayFor(model => item.created_at)</td>
+                            <td>
+                                <a class="btn btn-primary" href="@Url.Action("Edit", new { id = item.id })">Edit</a>
+                                <a class="btn btn-danger" href="@Url.Action("Details", new { id = item.id })">Details</a>
+                                <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.id })">Delete</a>
+
+                            </td>
+                        </tr>
+                    }*@
                 </tbody>
+
             </table>
         </div>
     </div>
 </div>
 
+@*@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<div class="pr-4">
+    <ul style="display: flex; float:right; list-style: none; border-radius: .35rem">
+        <li class="paginate_button page-item previous" id="dataTable_previous">
+            <a asp-action="Index"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-pageNumber="@(Model.PageIndex - 1)"
+               asp-route-currentFilter="@ViewData["CurrentFilter"]"
+               aria-controls="dataTable" data-dt-idx="1"
+               class="btn page-link @prevDisabled">
+                Previous
+            </a>
+        </li>
+        <li class="paginate_button page-item next" id="dataTable_next">
+            <a asp-action="Index"
+               asp-route-sortOrder="@ViewData["CurrentSort"]"
+               asp-route-pageNumber="@(Model.PageIndex + 1)"
+               asp-route-currentFilter="@ViewData["CurrentFilter"]"
+               aria-controls="dataTable" data-dt-idx="2"
+               class="btn page-link @nextDisabled">
+                Next
+            </a>
+        </li>
+    </ul>
+</div>*@

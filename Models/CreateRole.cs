@@ -8,8 +8,7 @@ namespace Libraryms.Models
 {
     public class CreateRole
     {
-        public int id { get; set; }
         [Required]
-        public string RoleId { get; set; }
+        public string RoleName { get; set; }
     }
 }

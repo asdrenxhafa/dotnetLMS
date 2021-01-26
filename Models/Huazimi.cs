@@ -11,8 +11,8 @@ namespace Libraryms.Models
 
         // [Required]
         // [MinLength(5)]
-        public string DataPritjes { get; set; }
-        public string DataKthimit { get; set; }
+        public DateTime DataPritjes { get; set; }
+        public DateTime DataKthimit { get; set; }
         public int Klienti_id { get; set; }
         public int Libra_id { get; set; }
         public bool Aktiv { get; set; }

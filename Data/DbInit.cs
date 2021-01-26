@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Libraryms.Data
 {
@@ -17,9 +19,9 @@ namespace Libraryms.Data
             //Look for any students.
             if (context.Libra.Any() || context.Klienti.Any() || context.Roles.Any())
             {
-               return;   // DB has been seeded
+            return;   // DB has been seeded
             }
-            
+
 
 
 
@@ -53,18 +55,17 @@ namespace Libraryms.Data
             }
             context.SaveChanges();
 
-            var roles = new IdentityRole[] {
-                new IdentityRole{Name="Admin"},
-                new IdentityRole{Name="User"}
-            };
-            foreach(IdentityRole r in roles)
+            var pagesa = new Pagesa[]
+           {
+                new Pagesa{ shuma="5euro" , Klienti_id="1" , Active=true}
+           };
+            foreach (Pagesa p in pagesa)
             {
-                context.Roles.Add(r);
+                context.Pagesa.Add(p);
             }
             context.SaveChanges();
 
 
-           
-    }
+        }
     }
 }

@@ -1,4 +1,9 @@
-﻿
+﻿@using Libraryms.Data;
+
+
+@model PaginatedList<Libraryms.Models.Huazimi>
+
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -11,14 +16,16 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
+        <div class="float-right">
+        <a class="btn btn-primary" asp-controller="Huazimi" asp-action="Create">Huazo</a>
+        </div>
         <h6 class="m-0 font-weight-bold text-primary"></h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
-                    <tr>
-                        <th>#</th>
+                    <tr> 
                         <th>DataPritjes</th>
                         <th>DataKthimit</th>
                         <th>Klienti_id</th>
@@ -28,7 +35,6 @@
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>#</th>
                         <th>DataPritjes</th>
                         <th>DataKthimit</th>
                         <th>Klienti_id</th>
@@ -37,10 +43,59 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => item.DataPritjes)</td>
+                            <td>@Html.DisplayFor(model => item.DataKthimit)</td>
+                            <td>@Html.DisplayFor(model => item.Klienti_id)</td>
+                            <td>@Html.DisplayFor(model => item.Libra_id)</td>
+                            <td>@Html.DisplayFor(model => item.Aktiv)</td>
+                            <td>
+                                
+                                @if (item.Aktiv)
+                                {
+                                    <a class="btn btn-primary" asp-action="Kthe" asp-route-id="@item.id">Kthe</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.id })">Delete</a>
+                                }
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
     </div>
-</div>
+    @{
+        var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+    }
 
+    <div class="pr-4">
+        <ul style="display: flex; float:right; list-style: none; border-radius: .35rem">
+            <li class="paginate_button page-item previous" id="dataTable_previous">
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-pageNumber="@(Model.PageIndex - 1)"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   aria-controls="dataTable" data-dt-idx="1"
+                   class="btn page-link @prevDisabled">
+                    Previous
+                </a>
+            </li>
+            <li class="paginate_button page-item next" id="dataTable_next">
+                <a asp-action="Index"
+                   asp-route-sortOrder="@ViewData["CurrentSort"]"
+                   asp-route-pageNumber="@(Model.PageIndex + 1)"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   aria-controls="dataTable" data-dt-idx="2"
+                   class="btn page-link @nextDisabled">
+                    Next
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>

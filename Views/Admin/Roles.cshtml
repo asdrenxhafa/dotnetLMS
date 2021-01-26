@@ -1,0 +1,85 @@
+﻿@using Libraryms.Data;
+@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<IdentityRole>;
+
+
+@{
+    ViewData["Title"] = "Roles";
+}
+
+<title>Roles</title>
+
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Roles</h1>
+
+
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <div class="float-right">
+            <a class="btn btn-primary" asp-action="CreateRole">Create new</a>
+        </div>
+        <h6 class="m-0 font-weight-bold text-primary"></h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <div class="float-right">
+                <form asp-action="Index" method="get">
+                    <div class="form-actions no-color">
+
+                    </div>
+                </form>
+            </div>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+
+
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => item.Id)</td>
+                            <td>@Html.DisplayFor(model => item.Name)</td>
+
+                            <td>
+                                <a class="btn btn-primary" asp-controller="Admin" asp-action="EditUsersInRole" asp-route-roleId="@item.Id">Add or Remove Users</a>
+                                <form asp-action="Delete" asp-controller="Admin" asp-route-id="@item.Id" method="post">
+                                    <span id="confirmDeleteSpan_@item.Id" style="display:none">
+                                        <span>Are you sure you want to delete?</span>
+                                        <button type="submit" class="btn btn-danger">Yes</button>
+                                        <button type="button" class="btn btn-primary"
+                                           onclick="confirmDelete('@item.Id', false)">No</button>
+                                    </span>
+
+                                    <span id="deleteSpan_@item.Id">
+                                        <button type="button" class="btn btn-danger"
+                                           onclick="confirmDelete('@item.Id', true)">Delete</button>
+                                    </span>
+                                </form>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
