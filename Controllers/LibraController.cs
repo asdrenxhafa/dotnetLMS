@@ -139,7 +139,7 @@ namespace Libraryms.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,Titulli,Autori")] Libra libra)
+        public async Task<IActionResult> Edit(int id, [Bind("id,Titulli,Autori,E_Lire")] Libra libra)
         {
             if (id != libra.id)
             {
