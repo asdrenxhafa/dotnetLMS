@@ -9189,19 +9189,31 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\FatlindaFejzaj\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Asdren\\.nuget\\packages\\": {}
+>>>>>>> 63aa92c338123d77a374a12e73bbe00289b651bc
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\Libraryms.csproj",
+=======
+      "projectUniqueName": "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj",
+>>>>>>> 63aa92c338123d77a374a12e73bbe00289b651bc
       "projectName": "Libraryms",
-      "projectPath": "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\Libraryms.csproj",
-      "packagesPath": "C:\\Users\\FatlindaFejzaj\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\obj\\",
+      "projectPath": "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj",
+      "packagesPath": "C:\\Users\\Asdren\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Asdren\\Desktop\\Libraryms\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\FatlindaFejzaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\Asdren\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 63aa92c338123d77a374a12e73bbe00289b651bc
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
