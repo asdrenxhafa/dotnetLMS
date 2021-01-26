@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Libraryms.Models.Pagesa
+namespace Libraryms.Models
 {
     public class Pagesa
     {
@@ -15,6 +15,6 @@ namespace Libraryms.Models.Pagesa
         public string Klienti_id { get; set; }
         public bool Active { get; set; }
         public DateTime created_at { get; set; }
-        public DateTime deleted_at { get; set; }
+       
     }
 }
