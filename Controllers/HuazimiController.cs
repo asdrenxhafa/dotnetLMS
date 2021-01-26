@@ -57,6 +57,7 @@ namespace Libraryms.Controllers
         public IActionResult Huazo(int libriId)
         {
             Huazimi huazimi = new Huazimi();
+            
             huazimi.DataPritjes = DateTime.Now.AddMonths(1) ;
             huazimi.DataKthimit = DateTime.Now;
             huazimi.Klienti_id = 1;

@@ -1068,6 +1068,13 @@ C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Lo
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Statistika\Index.cshtml.g.cs
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Huazimi\Delete.cshtml.g.cs
+C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Admin\CreateRole.cshtml.g.cs
+C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Roles.cshtml.g.cs
+C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Admin\EditUsersinRole.cshtml.g.cs
 >>>>>>> 1443704e9a92fe38a535fd2b7be58aea87e6e2e5
+<<<<<<< HEAD
 C:\Users\FatlindaFejzaj\Desktop\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Huazimi\Delete.cshtml.g.cs
 C:\Users\FatlindaFejzaj\Desktop\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Perdoruesi\Index.cshtml.g.cs
+=======
+>>>>>>> 192f82432639aa952d8eff852de6bfe4f86caee5
+>>>>>>> 0605761ea64dfb0f1ab5031e147085383d6565f4
