@@ -60,11 +60,12 @@
                         @if (item.E_Lire)
                         {
                             <a class="btn btn-primary" asp-controller="Rezervimi" asp-action="Rezervo" asp-route-libriId="@item.id">Rezervo</a>
+                            <a class="btn btn-primary" asp-controller="Huazimi" asp-action="Huazo" asp-route-libriId="@item.id">Huazo</a>
                         }
                         <a class="btn btn-primary" href="@Url.Action("Edit", new { id = item.id })">Edit</a>
                         <a class="btn btn-danger" href="@Url.Action("Details", new { id = item.id })">Details</a>
                         <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.id })">Delete</a>
-                      
+
                     </td>
                     </tr>
                 }

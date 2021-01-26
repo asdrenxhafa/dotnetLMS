@@ -15,7 +15,7 @@ namespace Libraryms.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.10")
+                .HasAnnotation("ProductVersion", "3.1.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -29,11 +29,11 @@ namespace Libraryms.Migrations
                     b.Property<bool>("Aktiv")
                         .HasColumnType("bit");
 
-                    b.Property<string>("DataKthimit")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("DataKthimit")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("DataPritjes")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("DataPritjes")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("Klienti_id")
                         .HasColumnType("int");

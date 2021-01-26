@@ -9189,11 +9189,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\FatlindaFejzaj\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\leu\\.nuget\\packages\\": {}
+>>>>>>> 1443704e9a92fe38a535fd2b7be58aea87e6e2e5
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\Libraryms.csproj",
       "projectName": "Libraryms",
       "projectPath": "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\Libraryms.csproj",
@@ -9202,6 +9207,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\FatlindaFejzaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj",
+      "projectName": "Libraryms",
+      "projectPath": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj",
+      "packagesPath": "C:\\Users\\leu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\leu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 1443704e9a92fe38a535fd2b7be58aea87e6e2e5
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9213,6 +9228,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -9224,6 +9240,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
@@ -9274,7 +9291,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
