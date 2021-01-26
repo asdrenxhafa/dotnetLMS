@@ -14,7 +14,6 @@
 
 
 
-
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -56,8 +55,20 @@
 
                             <td>
                                 <a class="btn btn-primary" asp-controller="Admin" asp-action="EditUsersInRole" asp-route-roleId="@item.Id">Add or Remove Users</a>
-                                @*<a class="btn btn-danger" href="@Url.Action("RemoveUsers", new { id = item.id })">RemoveUsers</a>*@
-                                @*<a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.id })">Delete</a>*@
+                                <form asp-action="Delete" asp-controller="Admin" asp-route-id="@item.Id" method="post">
+                                    <span id="confirmDeleteSpan_@item.Id" style="display:none">
+                                        <span>Are you sure you want to delete?</span>
+                                        <button type="submit" class="btn btn-danger">Yes</button>
+                                        <button type="button" class="btn btn-primary"
+                                           onclick="confirmDelete('@item.Id', false)">No</button>
+                                    </span>
+
+                                    <span id="deleteSpan_@item.Id">
+                                        <button type="button" class="btn btn-danger"
+                                           onclick="confirmDelete('@item.Id', true)">Delete</button>
+                                    </span>
+                                </form>
+
                             </td>
                         </tr>
                     }
@@ -67,4 +78,8 @@
     </div>
 
 </div>
+
+
+
+
 
