@@ -1,37 +1,20 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\Libraryms.csproj": {}
+    "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\Libraryms.csproj": {
+    "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\Libraryms.csproj",
+        "projectUniqueName": "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj",
         "projectName": "Libraryms",
-        "projectPath": "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\Libraryms.csproj",
-        "packagesPath": "C:\\Users\\FatlindaFejzaj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\obj\\",
+        "projectPath": "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj",
+        "packagesPath": "C:\\Users\\Asdren\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Asdren\\Desktop\\Libraryms\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\FatlindaFejzaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-    "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj",
-        "projectName": "Libraryms",
-        "projectPath": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj",
-        "packagesPath": "C:\\Users\\leu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\leu\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 0605761ea64dfb0f1ab5031e147085383d6565f4
+          "C:\\Users\\Asdren\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
