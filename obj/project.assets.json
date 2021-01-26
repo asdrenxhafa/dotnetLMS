@@ -9189,16 +9189,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\FatlindaFejzaj\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\leu\\.nuget\\packages\\": {}
->>>>>>> 0605761ea64dfb0f1ab5031e147085383d6565f4
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\Libraryms.csproj",
       "projectName": "Libraryms",
       "projectPath": "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\Libraryms.csproj",
@@ -9207,16 +9202,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\FatlindaFejzaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-      "projectUniqueName": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj",
-      "projectName": "Libraryms",
-      "projectPath": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj",
-      "packagesPath": "C:\\Users\\leu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\leu\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 0605761ea64dfb0f1ab5031e147085383d6565f4
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9292,17 +9277,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-<<<<<<< HEAD
-      "message": "Problem reading the cache file C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-=======
-      "message": "Problem reading the cache file C:\\Users\\leu\\source\\repos\\dotnetLMS\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
->>>>>>> 0605761ea64dfb0f1ab5031e147085383d6565f4
-    }
-  ]
+  }
 }
