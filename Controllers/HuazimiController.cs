@@ -8,6 +8,7 @@ using Libraryms.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Libraryms.Controllers
 {
@@ -49,32 +50,45 @@ namespace Libraryms.Controllers
             return View(huazimi);
         }
 
-        // GET: HuazimiController/Create
-        public ActionResult Create()
+      
+
+        
+        [HttpGet]
+        public IActionResult Create()
         {
-            return View();
+            ViewBag.klientetid = _context.Klienti.ToList();
+            var librat = _context.Libra.Where(l => l.E_Lire == true).ToList();
+            ViewBag.libraid = librat;
+            return View(); 
+
         }
-        public IActionResult Huazo(int libriId)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("DataKthimit,Klienti_id,Libra_id,")] Huazimi huazimi)
         {
-            Huazimi huazimi = new Huazimi();
-            
-            huazimi.DataPritjes = DateTime.Now.AddMonths(1) ;
-            huazimi.DataKthimit = DateTime.Now;
-            huazimi.Klienti_id = 1;
-            huazimi.Libra_id = libriId;
-            huazimi.Aktiv = true;
-            _context.Huazimi.Add(huazimi);
-            _context.SaveChanges();
+            try { 
+                if (ModelState.IsValid)
+                        {
+                            huazimi.DataPritjes = DateTime.Now.AddMonths(1);
+                            huazimi.Aktiv = true;
+                             _context.Huazimi.Add(huazimi);
+                            Libra libri = _context.Libra.Where(t => t.id == huazimi.Libra_id).First();
+                            libri.E_Lire = false;
+                             _context.Libra.Update(libri);
+                    await _context.SaveChangesAsync();
+                            return RedirectToAction(nameof(Index));
+                        }
+                    }
+                    catch (DbUpdateException /* ex */)
+                    {
+                //Log the error (uncomment ex variable name and write a log.
+                ModelState.AddModelError("", "Unable to save changes. " +
+                            "Try again, and if the problem persists " +
+                            "see your system administrator.");
+                    }
+                    return View(huazimi);
 
-            Libra libri = _context.Libra.Where(t => t.id == libriId).First();
-            libri.E_Lire = false;
-            _context.Libra.Update(libri);
-            _context.SaveChanges();
-
-
-            
-            return RedirectToAction("Index");
-        }
+                }
 
         public IActionResult Kthe(int id)
         {

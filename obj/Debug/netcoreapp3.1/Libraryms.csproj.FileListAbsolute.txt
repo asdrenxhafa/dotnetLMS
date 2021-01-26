@@ -213,3 +213,5 @@ C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.csproj.Cop
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.dll
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.pdb
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.genruntimeconfig.cache
+C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Perdoruesit\Index.cshtml.g.cs
+C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Huazimi\Create.cshtml.g.cs

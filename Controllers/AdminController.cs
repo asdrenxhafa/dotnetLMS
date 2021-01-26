@@ -61,6 +61,13 @@ namespace Libraryms.Controllers
         }
 
         [HttpGet]
+        public IActionResult Users()
+        {
+            var user = userManager.Users;
+            return View(user);
+        }
+
+        [HttpGet]
         public async Task<IActionResult> EditUsersInRole(string roleId)
         {
             ViewBag.roleId = roleId;

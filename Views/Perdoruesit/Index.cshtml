@@ -32,12 +32,12 @@
             </tfoot>
 
             <tbody>
-                @foreach (var s in Model)
+                @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@Html.DisplayFor(model => s.Id)</td>
-                        <td>@Html.DisplayFor(model => s.UserName)</td>
-                        <td>@Html.DisplayFor(model => s.Email)</td>
+                        <td>@Html.DisplayFor(model => item.Id)</td>
+                        <td>@Html.DisplayFor(model => item.UserName)</td>
+                        <td>@Html.DisplayFor(model => item.Email)</td>
 
                     </tr>
                 }
