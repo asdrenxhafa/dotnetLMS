@@ -1,0 +1,70 @@
+﻿@using Libraryms.Data;
+@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<IdentityRole>;
+
+
+@{
+    ViewData["Title"] = "Roles";
+}
+
+<title>Roles</title>
+
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Roles</h1>
+
+
+
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <div class="float-right">
+            <a class="btn btn-primary" asp-action="CreateRole">Create new</a>
+        </div>
+        <h6 class="m-0 font-weight-bold text-primary"></h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <div class="float-right">
+                <form asp-action="Index" method="get">
+                    <div class="form-actions no-color">
+
+                    </div>
+                </form>
+            </div>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+
+
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => item.Id)</td>
+                            <td>@Html.DisplayFor(model => item.Name)</td>
+
+                            <td>
+                                <a class="btn btn-primary" asp-controller="Admin" asp-action="EditUsersInRole" asp-route-roleId="@item.Id">Add or Remove Users</a>
+                                @*<a class="btn btn-danger" href="@Url.Action("RemoveUsers", new { id = item.id })">RemoveUsers</a>*@
+                                @*<a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.id })">Delete</a>*@
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
