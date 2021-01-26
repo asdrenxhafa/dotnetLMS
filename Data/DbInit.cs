@@ -65,10 +65,22 @@ namespace Libraryms.Data
             //}
             //context.SaveChanges();
 
+            var pagesa = new Pagesa[]
+           {
+                new Pagesa{ shuma="5euro" , Klienti_id="1" , Active=true}
+           };
+            foreach (Pagesa p in pagesa)
+            {
+                context.Pagesa.Add(p);
+            }
+            context.SaveChanges();
 
+<<<<<<< HEAD
             
 
 
+=======
+>>>>>>> 192f82432639aa952d8eff852de6bfe4f86caee5
 
         }
     }

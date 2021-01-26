@@ -19,6 +19,7 @@ namespace Libraryms.Data
 
         public DbSet<Libraryms.Models.Huazimi> Huazimi { get; set; }
         public DbSet<Libraryms.Models.Rezervimi> Rezervimi { get; set; }
+        public DbSet<Libraryms.Models.Pagesa> Pagesa{ get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -26,6 +27,8 @@ namespace Libraryms.Data
             modelBuilder.Entity<Klienti>().ToTable("Klientet");
             modelBuilder.Entity<Huazimi>().ToTable("Huazimi");
             modelBuilder.Entity<Rezervimi>().ToTable("Rezervimi");
+            modelBuilder.Entity<Pagesa>().ToTable("Pagesa");
+
         }
     }
 }

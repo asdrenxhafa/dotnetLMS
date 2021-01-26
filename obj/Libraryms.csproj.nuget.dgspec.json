@@ -1,6 +1,22 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\Libraryms.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\Libraryms.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\Libraryms.csproj",
+        "projectName": "Libraryms",
+        "projectPath": "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\Libraryms.csproj",
+        "packagesPath": "C:\\Users\\FatlindaFejzaj\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\FatlindaFejzaj\\Desktop\\dotnetLMS\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\FatlindaFejzaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
     "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj": {}
   },
   "projects": {
@@ -15,6 +31,7 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\leu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 1443704e9a92fe38a535fd2b7be58aea87e6e2e5
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
