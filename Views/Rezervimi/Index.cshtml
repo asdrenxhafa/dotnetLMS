@@ -52,12 +52,16 @@
                             <td>@Html.DisplayFor(model => item.Aktiv)</td>
                             <td>@Html.DisplayFor(model => item.created_at)</td>
                             <td>
+                                 
+                                
                                 <a class="btn btn-primary" href="@Url.Action("Edit", new { id = item.id })">Edit</a>
                                 <a class="btn btn-primary" href="@Url.Action("Details", new { id = item.id })">Details</a>
                                 <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.id })">Delete</a>
                             </td>
                         </tr>
+
                     }
+
                 </tbody>
             </table>
         </div>

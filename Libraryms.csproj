@@ -6,10 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="images\**" />
     <Compile Remove="Models\Klienti\**" />
+    <Compile Remove="Services\**" />
+    <Content Remove="images\**" />
     <Content Remove="Models\Klienti\**" />
+    <Content Remove="Services\**" />
+    <EmbeddedResource Remove="images\**" />
     <EmbeddedResource Remove="Models\Klienti\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="images\**" />
     <None Remove="Models\Klienti\**" />
+    <None Remove="Services\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,8 +43,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="images\" />
-    <Folder Include="Services\" />
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 

@@ -9759,11 +9759,13 @@ a:focus {
   display: flex;
 }
 
-#wrapper #content-wrapper {
-  background-color: #f8f9fc;
-  width: 100%;
-  overflow-x: hidden;
-}
+    #wrapper #content-wrapper {
+        background-color: #f8f9fc;
+        width: 100%;
+        overflow-x: hidden;
+        background-image: url(https://source.unsplash.com/Oaqk7qqNh_c);
+        opacity:inherit;
+    }
 
 #wrapper #content-wrapper #content {
   flex: 1 0 auto;
@@ -11242,3 +11244,5 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+
+    
