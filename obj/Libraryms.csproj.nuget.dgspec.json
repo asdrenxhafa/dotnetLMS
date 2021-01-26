@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj": {}
+    "C:\\Users\\Blerina\\Documents\\dotnetLMS\\Libraryms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj": {
+    "C:\\Users\\Blerina\\Documents\\dotnetLMS\\Libraryms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj",
+        "projectUniqueName": "C:\\Users\\Blerina\\Documents\\dotnetLMS\\Libraryms.csproj",
         "projectName": "Libraryms",
-        "projectPath": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj",
-        "packagesPath": "C:\\Users\\leu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\obj\\",
+        "projectPath": "C:\\Users\\Blerina\\Documents\\dotnetLMS\\Libraryms.csproj",
+        "packagesPath": "C:\\Users\\Blerina\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Blerina\\Documents\\dotnetLMS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\leu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Blerina\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,11 +22,11 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://packagesource": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +38,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
@@ -89,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
         }
       }
     }

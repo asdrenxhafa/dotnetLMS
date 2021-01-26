@@ -5,21 +5,34 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<h2>Rezervo</h2>
 
-<form class="form" asp-action="Create" method="post">
-    <div class="form-group">
-        <label>Klienti:</label>
-        <input type="number" asp-for="Klienti_id" /> <br>
 
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form class="form" asp-action="Create" method="post">
+            <div class="modal-header">
+                <h4 class="modal-title">Rezervo</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="window.location='/Rezervimi';">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Klienti:</label>
+                    <select asp-for="Klienti_id" class="form-control" asp-items="@(new SelectList(ViewBag.klientetid,"id","id"))">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Libra:</label>
+                    <select asp-for="Libra_id" class="form-control" asp-items="@(new SelectList(ViewBag.libraid,"id","id"))">
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-default" value="Anulo" onclick="window.location='/Rezervimi';">
+                <input type="submit" value="Huazo" class="btn btn-primary float-right">
+            </div>
+
+
+        </form>
     </div>
-    <div class="form-group">
-        <label>Libri:</label>
-        <input type="number" asp-for="Libra_id" />
-    </div>
-    <div class="form-group">
-        <label>Aktiv:</label>
-        <input type="checkbox" asp-for="Aktiv" />
-    </div>
-    <input class="btn btn-primary" type="submit" value="Submit" />
-</form>
+</div>
