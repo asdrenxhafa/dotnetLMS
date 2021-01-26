@@ -1069,3 +1069,5 @@ C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Home\Re
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Statistika\Index.cshtml.g.cs
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Huazimi\Delete.cshtml.g.cs
 >>>>>>> 1443704e9a92fe38a535fd2b7be58aea87e6e2e5
+C:\Users\FatlindaFejzaj\Desktop\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Huazimi\Delete.cshtml.g.cs
+C:\Users\FatlindaFejzaj\Desktop\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Perdoruesi\Index.cshtml.g.cs
