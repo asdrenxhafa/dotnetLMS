@@ -69,7 +69,10 @@ namespace Libraryms.Controllers
                 {
                     r.Aktiv = true;
                     r.created_at = DateTime.Now;
-                    _context.Add(r);
+                    _context.Rezervimi.Add(r);
+                    Libra libri = _context.Libra.Where(t => t.id == r.Libra_id).First();
+                    libri.E_Lire = true;
+                    _context.Libra.Update(libri);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
@@ -83,6 +86,22 @@ namespace Libraryms.Controllers
             }
             return View(r);
 
+        }
+        public IActionResult Kthe(int id)
+        {
+            Rezervimi r = _context.Rezervimi.Where(t => t.id == id).First();
+            r.created_at = DateTime.Now;
+            r.Aktiv = false;
+            _context.Rezervimi.Update(r);
+            _context.SaveChanges();
+
+
+            Libra libri = _context.Libra.Where(t => t.id == r.Libra_id).First();
+            libri.E_Lire = false;
+            _context.Libra.Update(libri);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
         public async Task<IActionResult> Delete(int? id)
         {

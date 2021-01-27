@@ -420,8 +420,6 @@ C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Pagesa\
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Perdoruesit\Index.cshtml.g.cs
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Create.cshtml.g.cs
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Delete.cshtml.g.cs
-C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Details.cshtml.g.cs
-C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Edit.cshtml.g.cs
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Rezervimi\Index.cshtml.g.cs
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Blerina\Documents\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
