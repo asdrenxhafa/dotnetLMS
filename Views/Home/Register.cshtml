@@ -1,4 +1,9 @@
-﻿@model Register
+﻿@{
+    Layout = null;
+}
+
+
+@model Register
 
 
 @{
@@ -21,12 +26,12 @@
     <title>Register</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -48,8 +53,8 @@
                             </div>
                             <form class="user" method="post">
                                 <div class="form-group " asp-validation-summary="All" class="text-danger">
-                                        <input asp-for="Name" class="form-control form-control-user" placeholder="Name"/>
-                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    <input asp-for="Name" class="form-control form-control-user" placeholder="Name" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <input asp-for="Email" class="form-control form-control-user" placeholder="Email" />
@@ -65,23 +70,23 @@
                                         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                                     </div>
                                 </div>
-                                <button type="submit"class="btn btn-primary btn-user btn-block">Register</button>
-                                    
+                                <button type="submit" class="btn btn-primary btn-user btn-block">Register</button>
+
                                 @*<hr>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Register with Google
-                                </a>
-                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                                </a>*@
+                                    <a href="index.html" class="btn btn-google btn-user btn-block">
+                                        <i class="fab fa-google fa-fw"></i> Register with Google
+                                    </a>
+                                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                        <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                                    </a>*@
                             </form>
                             <hr>
                             @*<div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
-                            </div>*@
-                        <div class="text-center">
-                            <a asp-action="Login" class="nav-link">Already have an account? Login!</a>
-                        </div>
+                                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                </div>*@
+                            <div class="text-center">
+                                <a asp-action="Login" class="nav-link">Already have an account? Login!</a>
+                            </div>
                         </div>
                     </div>
                 </div>
