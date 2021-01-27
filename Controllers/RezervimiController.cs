@@ -52,6 +52,7 @@ namespace Libraryms.Controllers
         {
             ViewBag.klientetid = _context.Klienti.ToList();
             var librat = _context.Libra.Where(l => l.E_Lire == false).ToList();
+
             ViewBag.libraid = librat;
             return View();
         }
@@ -67,6 +68,16 @@ namespace Libraryms.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    var huazimet = _context.Huazimi.Where(h => h.Klienti_id == r.Klienti_id && h.Aktiv == true).ToList();
+
+                    foreach ( Huazimi h in huazimet )
+                    {
+                        if (r.Libra_id == h.Libra_id)
+                        {
+                            return RedirectToAction(nameof(Index));
+                        }
+                    }
+
                     r.Aktiv = true;
                     r.created_at = DateTime.Now;
                     _context.Rezervimi.Add(r);
