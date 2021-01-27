@@ -81,9 +81,6 @@ namespace Libraryms.Controllers
                     r.Aktiv = true;
                     r.created_at = DateTime.Now;
                     _context.Rezervimi.Add(r);
-                    Libra libri = _context.Libra.Where(t => t.id == r.Libra_id).First();
-                    libri.E_Lire = true;
-                    _context.Libra.Update(libri);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
