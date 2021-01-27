@@ -48,83 +48,86 @@
             <!-- Divider -->
             <h class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="/Home">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Home</span>
-                </a>
-            </li>
+                <!-- Nav Item - Dashboard -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/Home">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/Libra">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Librat</span>
-                </a>
-            </li>
+                <!-- Nav Item - Tables -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/Libra">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Librat</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/Klienti">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Klientet</span>
-                </a>
-            </li>
+                <!-- Nav Item - Tables -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/Klienti">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Klientet</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/Pagesa">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Pagesat</span>
-                </a>
-            </li>
+                <!-- Nav Item - Tables -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/Pagesa">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Pagesat</span>
+                    </a>
+                </li>
 
 
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="Rezervimi">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Rezervimet</span>
-                </a>
-            </li>
+                <!-- Nav Item - Tables -->
+                <li class="nav-item">
+                    <a class="nav-link" href="Rezervimi">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Rezervimet</span>
+                    </a>
+                </li>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/Huazimi">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Huazimet</span>
-                </a>
-            </li>
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/Perdoruesit">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Perdoruesit</span>
-                </a>
-            </li>
+                <!-- Nav Item - Tables -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/Huazimi">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Huazimet</span>
+                    </a>
+                </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                {
+                    <!-- Nav Item - Tables -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Perdoruesit">
+                            <i class="fas fa-fw fa-table"></i>
+                            <span>Perdoruesit</span>
+                        </a>
+                    </li>
 
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/statistika">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Admin Panel</span>
-                </a>
-            </li>
+                    <!-- Divider -->
+                    <hr class="sidebar-divider d-none d-md-block">
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+                    <!-- Nav Item - Tables -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/statistika">
+                            <i class="fas fa-fw fa-table"></i>
+                            <span>Admin Panel</span>
+                        </a>
+                    </li>
+                }
+                    <!-- Sidebar Toggler (Sidebar) -->
+                    <div class="text-center d-none d-md-inline">
+                        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                    </div>
 
-        </ul>
+</ul>
         <style>
            
         </style>

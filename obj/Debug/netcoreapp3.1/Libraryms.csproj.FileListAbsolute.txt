@@ -153,7 +153,6 @@ C:\Users\leu\source\repos\dotnetLMS\bin\Debug\netcoreapp3.1\runtimes\win-x86\nat
 C:\Users\leu\source\repos\dotnetLMS\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\leu\source\repos\dotnetLMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\leu\source\repos\dotnetLMS\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.csprojAssemblyReference.cache
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.AssemblyInfoInputs.cache
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.AssemblyInfo.cs
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.csproj.CoreCompileInputs.cache
@@ -193,6 +192,7 @@ C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Libra\De
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Libra\Details.cshtml.g.cs
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Libra\Edit.cshtml.g.cs
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Libra\Index.cshtml.g.cs
+C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Pagesa\Create.cshtml.g.cs
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Pagesa\Delete.cshtml.g.cs
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Pagesa\Details.cshtml.g.cs
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Razor\Views\Pagesa\Edit.cshtml.g.cs
@@ -215,6 +215,7 @@ C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.csproj.Cop
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.dll
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.pdb
 C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.genruntimeconfig.cache
+<<<<<<< HEAD
 C:\Users\Blerina\Documents\dotnetLMS\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Blerina\Documents\dotnetLMS\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Blerina\Documents\dotnetLMS\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
@@ -874,3 +875,6 @@ C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\staticwebassets\Librar
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Libraryms.dll
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Libraryms.pdb
 C:\Users\Asdren\Desktop\Libraryms\obj\Debug\netcoreapp3.1\Libraryms.genruntimeconfig.cache
+=======
+C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.csprojAssemblyReference.cache
+>>>>>>> 31b3bbe0d99e69545b35df7558f4ea0b995b1315

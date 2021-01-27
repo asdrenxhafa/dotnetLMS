@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Asdren\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj",
+        "projectName": "Libraryms",
+        "projectPath": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj",
+        "packagesPath": "C:\\Users\\leu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\leu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 31b3bbe0d99e69545b35df7558f4ea0b995b1315
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +43,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +55,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
@@ -87,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
