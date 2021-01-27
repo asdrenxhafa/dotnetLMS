@@ -60,12 +60,16 @@
                                         <span>Are you sure you want to delete?</span>
                                         <button type="submit" class="btn btn-danger">Yes</button>
                                         <button type="button" class="btn btn-primary"
-                                           onclick="confirmDelete('@item.Id', false)">No</button>
+                                                onclick="confirmDelete('@item.Id', false)">
+                                            No
+                                        </button>
                                     </span>
 
                                     <span id="deleteSpan_@item.Id">
                                         <button type="button" class="btn btn-danger"
-                                           onclick="confirmDelete('@item.Id', true)">Delete</button>
+                                                onclick="confirmDelete('@item.Id', true)">
+                                            Delete
+                                        </button>
                                     </span>
                                 </form>
 
@@ -83,3 +87,4 @@
 
 
 
+<script asp-append-version="true" src="/js/scriptdelete.js"></script>

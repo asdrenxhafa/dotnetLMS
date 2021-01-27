@@ -103,29 +103,29 @@
 
                 @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                 {
-                    <!-- Nav Item - Tables -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Perdoruesit">
-                            <i class="fas fa-fw fa-table"></i>
-                            <span>Perdoruesit</span>
-                        </a>
-                    </li>
+                <!-- Nav Item - Tables -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/Perdoruesit">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Perdoruesit</span>
+                    </a>
+                </li>
 
-                    <!-- Divider -->
-                    <hr class="sidebar-divider d-none d-md-block">
+                <!-- Divider -->
+                <hr class="sidebar-divider d-none d-md-block">
 
-                    <!-- Nav Item - Tables -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="/statistika">
-                            <i class="fas fa-fw fa-table"></i>
-                            <span>Admin Panel</span>
-                        </a>
-                    </li>
+                <!-- Nav Item - Tables -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/statistika">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Admin Panel</span>
+                    </a>
+                </li>
                 }
-                    <!-- Sidebar Toggler (Sidebar) -->
-                    <div class="text-center d-none d-md-inline">
-                        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                    </div>
+                <!-- Sidebar Toggler (Sidebar) -->
+                <div class="text-center d-none d-md-inline">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
 
 </ul>
         <style>
@@ -166,13 +166,13 @@
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
+                        <!--<li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
-                            </a>
+                            </a>-->
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                            <!--<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                                  aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
@@ -187,7 +187,7 @@
                                     </div>
                                 </form>
                             </div>
-                        </li>
+                        </li>-->
 
 
 
@@ -293,25 +293,24 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
     @* <script src="vendor/datatables/jquery.dataTables.min.js"></script> *@
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="/js/demo/datatables-demo.js"></script>
     
     
     
-    <script  asp-append-version="true" src="~/js/scriptdelete.js"></script>
 
 
 </body>
