@@ -20,9 +20,13 @@ namespace Libraryms.Controllers
         }
 
         // GET: Pagesas
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(
+            int? pageNumber)
         {
-            return View(await _context.Pagesa.ToListAsync());
+            var pagesat = from s in _context.Pagesa
+                           select s;
+            int pageSize = 3;
+            return View(await PaginatedList<Pagesa>.CreateAsync(pagesat.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: Pagesas/Details/5
@@ -58,6 +62,8 @@ namespace Libraryms.Controllers
         {
             if (ModelState.IsValid)
             {
+                pagesa.Active = true;
+                pagesa.created_at = DateTime.Now;
                 _context.Add(pagesa);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

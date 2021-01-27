@@ -1,7 +1,7 @@
 ﻿@using Libraryms.Data;
 
-@*@model PaginatedList<Libraryms.Models.Pagesa>*@
-@model Libraryms.Models.Pagesa;
+@model PaginatedList<Libraryms.Models.Pagesa>
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -13,6 +13,9 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
+        <div class="float-right">
+            <a class="btn btn-primary" asp-action="Create">Create new</a>
+        </div>
         <h6 class="m-0 font-weight-bold text-primary"></h6>
     </div>
     <div class="card-body">
@@ -21,25 +24,25 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Titulli</th>
-                        <th>Autori</th>
-                        <th>Rafti</th>
-                        <th>E Lire</th>
+                        <th>Shuma</th>
+                        <th>Klienti</th>
+                        <th>Aktiv</th>
+                        <th>Created</th>
                         <th>Veprime</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <th>#</th>
-                        <th>Titulli</th>
-                        <th>Autori</th>
-                        <th>Rafti</th>
-                        <th>E Lire</th>
+                        <th>Shuma</th>
+                        <th>Klienti</th>
+                        <th>Aktiv</th>
+                        <th>Created</th>
                         <th>Veprime</th>
                     </tr>
                 </tfoot>
                 <tbody>
-                    @*@foreach (var item in Model)
+                    @foreach (var item in Model)
                     {
                         <tr>
                             <td>@Html.DisplayFor(model => item.id)</td>
@@ -54,7 +57,7 @@
 
                             </td>
                         </tr>
-                    }*@
+                    }
                 </tbody>
 
             </table>
@@ -62,7 +65,7 @@
     </div>
 </div>
 
-@*@{
+@{
     var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
     var nextDisabled = !Model.HasNextPage ? "disabled" : "";
 }
@@ -90,4 +93,4 @@
             </a>
         </li>
     </ul>
-</div>*@
+</div>
