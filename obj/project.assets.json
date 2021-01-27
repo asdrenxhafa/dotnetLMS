@@ -9189,25 +9189,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\Asdren\\.nuget\\packages\\": {}
-=======
     "C:\\Users\\leu\\.nuget\\packages\\": {}
->>>>>>> 31b3bbe0d99e69545b35df7558f4ea0b995b1315
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj",
-      "projectName": "Libraryms",
-      "projectPath": "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj",
-      "packagesPath": "C:\\Users\\Asdren\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asdren\\Desktop\\Libraryms\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\Asdren\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
       "projectUniqueName": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj",
       "projectName": "Libraryms",
       "projectPath": "C:\\Users\\leu\\source\\repos\\dotnetLMS\\Libraryms.csproj",
@@ -9216,7 +9202,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\leu\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 31b3bbe0d99e69545b35df7558f4ea0b995b1315
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
