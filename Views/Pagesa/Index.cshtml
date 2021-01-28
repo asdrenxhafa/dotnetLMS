@@ -27,8 +27,8 @@
                         <th>Shuma</th>
                         <th>Klienti</th>
                         <th>Aktiv</th>
-                        <th>Created</th>
-                        <th>Veprime</th>
+                        <th>DataEPageses</th>
+                        <th>DataESkadimit</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -37,26 +37,27 @@
                         <th>Shuma</th>
                         <th>Klienti</th>
                         <th>Aktiv</th>
-                        <th>Created</th>
-                        <th>Veprime</th>
+                        <th>DataEPageses</th>
+                        <th>DataESkadimit</th>
                     </tr>
                 </tfoot>
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>@Html.DisplayFor(model => item.id)</td>
-                            <td>@Html.DisplayFor(model => item.shuma)</td>
-                            <td>@Html.DisplayFor(model => item.Klienti_id)</td>
-                            <td>@Html.DisplayFor(model => item.Active)</td>
-                            <td>@Html.DisplayFor(model => item.created_at)</td>
-                            <td>
-                                <a class="btn btn-primary" href="@Url.Action("Edit", new { id = item.id })">Edit</a>
-                                <a class="btn btn-danger" href="@Url.Action("Details", new { id = item.id })">Details</a>
-                                <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.id })">Delete</a>
+                    <tr>
+                        <td>@Html.DisplayFor(model => item.id)</td>
+                        <td>@Html.DisplayFor(model => item.Shuma)</td>
+                        <td>@Html.DisplayFor(model => item.Klienti_id)</td>
+                        <td>@Html.DisplayFor(model => item.Active)</td>
+                        <td>@Html.DisplayFor(model => item.DataEPageses)</td>
+                        <td>@Html.DisplayFor(model => item.DataESkadimit)</td>
+                        <td>
+                            <a class="btn btn-primary" href="@Url.Action("Edit", new { id = item.id })">Edit</a>
+                            <a class="btn btn-danger" href="@Url.Action("Details", new { id = item.id })">Details</a>
+                            <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.id })">Delete</a>
 
-                            </td>
-                        </tr>
+                        </td>
+                    </tr>
                     }
                 </tbody>
 

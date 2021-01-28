@@ -4,14 +4,16 @@ using Libraryms.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Libraryms.Migrations
 {
     [DbContext(typeof(LibrarymsContext))]
-    partial class LibrarymsContextModelSnapshot : ModelSnapshot
+    [Migration("20210128130140_updates")]
+    partial class updates
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -116,8 +118,8 @@ namespace Libraryms.Migrations
                     b.Property<DateTime>("DataESkadimit")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Klienti_id")
-                        .HasColumnType("int");
+                    b.Property<string>("Klienti_id")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Shuma")
                         .HasColumnType("int");

@@ -50,6 +50,8 @@ namespace Libraryms.Controllers
         // GET: Pagesas/Create
         public IActionResult Create()
         {
+            ViewBag.shuma = new List<int>() { 5, 10, 15 }; 
+            ViewBag.klientetid = _context.Klienti.Where(k => k.Aktiv==false).ToList();
             return View();
         }
 
@@ -58,17 +60,41 @@ namespace Libraryms.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,shuma,Klienti_id,Active,created_at")] Pagesa pagesa)
+        public async Task<IActionResult> Create([Bind("id,Shuma,Klienti_id,Active,DataEPageses,DataESkadimit")] Pagesa pagesa)
         {
-            if (ModelState.IsValid)
+            try
             {
-                pagesa.Active = true;
-                pagesa.created_at = DateTime.Now;
-                _context.Add(pagesa);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    pagesa.Active = true;
+                    pagesa.DataEPageses = DateTime.Now;
+                    switch (pagesa.Shuma)
+                    {
+                        case 5:
+                            pagesa.DataESkadimit = DateTime.Now.AddMonths(1);
+                            break;
+                        case 10:
+                            pagesa.DataESkadimit = DateTime.Now.AddMonths(3);
+                            break;
+                        case 15:
+                            pagesa.DataESkadimit = DateTime.Now.AddMonths(6);
+                            break;
+                    }
+                    _context.Add(pagesa);
+                    Klienti klienti = _context.Klienti.Where(k => k.id == pagesa.Klienti_id).First();
+                    klienti.Aktiv = true;
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+            }catch(DbUpdateException ex)
+            {
+                //Log the error (uncomment ex variable name and write a log.
+                ModelState.AddModelError("", "Unable to save changes. " +
+                            "Try again, and if the problem persists " +
+                            "see your system administrator.");
             }
-            return View(pagesa);
+                return View(pagesa);
+            
         }
 
         // GET: Pagesas/Edit/5
@@ -92,7 +118,7 @@ namespace Libraryms.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,shuma,Klienti_id,Active,created_at")] Pagesa pagesa)
+        public async Task<IActionResult> Edit(int id, [Bind("id,shuma,Klienti_id,Active,DataEPageses,DataESkadimit")] Pagesa pagesa)
         {
             if (id != pagesa.id)
             {
@@ -146,6 +172,8 @@ namespace Libraryms.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var pagesa = await _context.Pagesa.FindAsync(id);
+            var klienti = _context.Klienti.Where(k => k.id == pagesa.Klienti_id).First();
+            klienti.Aktiv = false;
             _context.Pagesa.Remove(pagesa);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

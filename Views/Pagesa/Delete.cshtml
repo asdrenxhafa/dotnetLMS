@@ -10,20 +10,23 @@
     <div>
         <h4>Pagesa<h4>
        
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayFor(model => model.shuma)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Klienti_id)
-            </dd>
-            <dd>
-                @Html.DisplayFor(model => model.Active)
-            </dd>
-            <dt>
-                @Html.DisplayFor(model => model.created_at)
-            </dt>
-        </dl>
+                      <dl class="dl-horizontal">
+                          <dt>
+                              @Html.DisplayFor(model => model.Shuma)
+                          </dt>
+                          <dd>
+                              @Html.DisplayFor(model => model.Klienti_id)
+                          </dd>
+                          <dd>
+                              @Html.DisplayFor(model => model.Active)
+                          </dd>
+                          <dt>
+                              @Html.DisplayFor(model => model.DataEPageses)
+                          </dt>
+                          <dt>
+                              @Html.DisplayFor(model => model.DataESkadimit)
+                          </dt>
+                      </dl>
 
         <form asp-action="Delete">
             <input type="hidden" asp-for="id" />
