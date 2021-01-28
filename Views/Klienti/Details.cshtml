@@ -3,16 +3,15 @@
 ViewData["Title"] = "Details";
 }
 <div>
-    <table class="table">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="color:black;">
         <tr>
-            <td>@Model.id</td>
-            <td>@Model.Emri</td>
-            <td>@Model.Email</td>
-            <td>@Model.NumriTel</td>
-            <td>@Model.Aktiv</td>
-            <td>@Model.created_at</td>
-            <td>@Model.deleted_at</td>
-
+            <td bgcolor="white">@Model.id</td>
+            <td bgcolor="white">@Model.Emri</td>
+            <td bgcolor="white">@Model.Email</td>
+            <td bgcolor="white">@Model.NumriTel</td>
+            <td bgcolor="white">@Model.Aktiv</td>
+            <td bgcolor="white">@Model.created_at</td>
+       
         </tr>
     </table>
 </div>

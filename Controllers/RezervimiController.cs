@@ -95,22 +95,7 @@ namespace Libraryms.Controllers
             return View(r);
 
         }
-        public IActionResult Kthe(int id)
-        {
-            Rezervimi r = _context.Rezervimi.Where(t => t.id == id).First();
-            r.created_at = DateTime.Now;
-            r.Aktiv = false;
-            _context.Rezervimi.Update(r);
-            _context.SaveChanges();
-
-
-            Libra libri = _context.Libra.Where(t => t.id == r.Libra_id).First();
-            libri.E_Lire = false;
-            _context.Libra.Update(libri);
-            _context.SaveChanges();
-
-            return RedirectToAction("Index");
-        }
+       
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

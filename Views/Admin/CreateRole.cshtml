@@ -4,14 +4,26 @@
 @{
     ViewData["Title"] = "Create New Role";
 }
+ 
+<h1 style="color:white;">Create New Role</h1>
 
-<h2>Create New Role</h2>
-
-<form class="form" asp-action="CreateRole" method="post">
-    <div class="form-group">
-        <label>RoleName:</label>
-        <input type="text" asp-for="RoleName" /> <br>
-
+<div class="modal-dialog">
+    <div class="modal-content">
+        <form class="form" asp-action="CreateRole" method="post">
+            <div class="modal-header">
+                <h4 class="modal-title">Krijo Rol</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="window.location='/admin/roles';">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>RoleName:</label>
+                    <input name="RoleName" id="RoleName" type="text" class="form-control" value="" required>
+                </div>
+             </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-dark" value="Anulo" onclick="window.location='/admin/roles';">
+                <input type="submit" value="Create Role" class="btn btn-primary float-right">
+            </div>
+        </form>
     </div>
-    <input class="btn btn-primary" type="submit" value="Create Role" />
-</form>
+</div>

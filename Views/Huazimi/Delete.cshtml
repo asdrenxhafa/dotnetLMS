@@ -6,31 +6,33 @@
 
 
 
-<h3>Are you sure you want to delete this?</h3>
+<h1 style="color:white;">Are you sure you want to delete this?</h1>
 <div>
-    <h4>Huazimi</h4>
+    <h4 style="color:white;">Huazimi<h4>
             <hr />
-            <dl class="dl-horizontal">
+            <dl class="dl-horizontal"style="color:white;">
                 <dt>
-                    @Html.DisplayFor(model => model.DataPritjes)
+                    <h5>Data e Pritjes:   @Html.DisplayFor(model => model.DataPritjes)</h5> 
                 </dt>
                 <dd>
-                    @Html.DisplayFor(model => model.DataKthimit)
+                    <h5>Data e Kthimit:   @Html.DisplayFor(model => model.DataKthimit)</h5>
                 </dd>
                 <dd>
-                    @Html.DisplayFor(model => model.Klienti_id)
+                    <h5>Klienti ID:   @Html.DisplayFor(model => model.Klienti_id)</h5>
                 </dd>
                 <dt>
-                    @Html.DisplayFor(model => model.Libra_id)
+                    <h5>Libra ID:   @Html.DisplayFor(model => model.Libra_id)</h5>
                 </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.Aktiv)
+                <dd>  
+                    <h5>Aktiv: @Html.DisplayFor(model => model.Aktiv)</h5>
                 </dd>
             </dl>
 
             <form asp-action="Delete">
                 <input type="hidden" asp-for="id" />
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                <a asp-action="Index">Back to List</a>
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                <a asp-action="Index">
+                    <input type="button" value="Back to List" class="btn btn-dark" />
+                </a>
             </form>
 </div>

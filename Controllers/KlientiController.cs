@@ -67,7 +67,7 @@ namespace Libraryms.Controllers
             {
                 return NotFound();
             }
-
+      
             var klientet = await _context.Klienti
                 .FirstOrDefaultAsync(m => m.id == id);
 
@@ -148,6 +148,7 @@ namespace Libraryms.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    k.created_at = DateTime.Now;
                     _context.Add(k);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
