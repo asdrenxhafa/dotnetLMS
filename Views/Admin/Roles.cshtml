@@ -36,7 +36,7 @@
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
-
+                        <th>#</th>
 
                     </tr>
                 </thead>
@@ -44,6 +44,7 @@
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
+                        <th>#</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -54,7 +55,7 @@
                             <td>@Html.DisplayFor(model => item.Name)</td>
 
                             <td>
-                                <a class="btn btn-primary" asp-controller="Admin" asp-action="EditUsersInRole" asp-route-roleId="@item.Id">Add or Remove Users</a>
+                                <a class="btn btn-primary" asp-controller="Admin" asp-action="EditUsersInRole" asp-route-roleId="@item.Id">Add or Remove Users</a> <br><br>
                                 <form asp-action="Delete" asp-controller="Admin" asp-route-id="@item.Id" method="post">
                                     <span id="confirmDeleteSpan_@item.Id" style="display:none">
                                         <span>Are you sure you want to delete?</span>

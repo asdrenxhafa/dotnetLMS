@@ -50,7 +50,7 @@ namespace Libraryms.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.klientetid = _context.Klienti.ToList();
+            ViewBag.klientetid = _context.Klienti.Where(k => k.Aktiv==true).ToList();
             var librat = _context.Libra.Where(l => l.E_Lire == false).ToList();
 
             ViewBag.libraid = librat;
@@ -95,22 +95,7 @@ namespace Libraryms.Controllers
             return View(r);
 
         }
-        public IActionResult Kthe(int id)
-        {
-            Rezervimi r = _context.Rezervimi.Where(t => t.id == id).First();
-            r.created_at = DateTime.Now;
-            r.Aktiv = false;
-            _context.Rezervimi.Update(r);
-            _context.SaveChanges();
-
-
-            Libra libri = _context.Libra.Where(t => t.id == r.Libra_id).First();
-            libri.E_Lire = false;
-            _context.Libra.Update(libri);
-            _context.SaveChanges();
-
-            return RedirectToAction("Index");
-        }
+       
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

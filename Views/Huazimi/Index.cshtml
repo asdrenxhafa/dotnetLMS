@@ -3,7 +3,6 @@
 
 @model PaginatedList<Libraryms.Models.Huazimi>
 
-
 @{
     ViewData["Title"] = "Index";
 }
@@ -17,7 +16,7 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <div class="float-right">
-        <a class="btn btn-primary" asp-controller="Huazimi" asp-action="Create">Huazo</a>
+            <a class="btn btn-primary" asp-controller="Huazimi" asp-action="Create">Huazo</a>
         </div>
         <h6 class="m-0 font-weight-bold text-primary"></h6>
     </div>
@@ -25,7 +24,7 @@
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
-                    <tr> 
+                    <tr>
                         <th>DataPritjes</th>
                         <th>DataKthimit</th>
                         <th>Klienti_id</th>
@@ -52,7 +51,7 @@
                             <td>@Html.DisplayFor(model => item.Libra_id)</td>
                             <td>@Html.DisplayFor(model => item.Aktiv)</td>
                             <td>
-                                
+
                                 @if (item.Aktiv)
                                 {
                                     <a class="btn btn-primary" asp-action="Kthe" asp-route-id="@item.id">Kthe</a>
