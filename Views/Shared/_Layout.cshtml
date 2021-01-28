@@ -103,33 +103,32 @@
 
                 @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                 {
-                <!-- Nav Item - Tables -->
-                <li class="nav-item">
-                    <a class="nav-link" href="/Perdoruesit">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Perdoruesit</span>
-                    </a>
-                </li>
+                    <!-- Nav Item - Tables -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Perdoruesit">
+                            <i class="fas fa-fw fa-table"></i>
+                            <span>Perdoruesit</span>
+                        </a>
+                    </li>
 
-                <!-- Divider -->
-                <hr class="sidebar-divider d-none d-md-block">
+                    <!-- Divider -->
+                    <hr class="sidebar-divider d-none d-md-block">
 
-                <!-- Nav Item - Tables -->
-                <li class="nav-item">
-                    <a class="nav-link" href="/statistika">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Admin Panel</span>
-                    </a>
-                </li>
+                    <!-- Nav Item - Tables -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/statistika">
+                            <i class="fas fa-fw fa-table"></i>
+                            <span>Admin Panel</span>
+                        </a>
+                    </li>
                 }
                 <!-- Sidebar Toggler (Sidebar) -->
                 <div class="text-center d-none d-md-inline">
                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
                 </div>
 
-</ul>
+        </ul>
         <style>
-           
         </style>
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
@@ -150,17 +149,17 @@
 
                     <!-- Topbar Search -->
                     @*<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                   aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                       aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>*@
-                    
+                        </form>*@
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -171,8 +170,8 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>-->
-                            <!-- Dropdown - Messages -->
-                            <!--<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                        <!-- Dropdown - Messages -->
+                        <!--<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                                  aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
@@ -222,21 +221,21 @@
                         </ul>
                         <!-- Nav Item - User Information -->
                         @*<li class="nav-item dropdown no-arrow">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                    <img class="img-profile rounded-circle"
-                         src="img/undraw_profile.svg">
-                </a>
-                 Dropdown - User Information
-                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                     aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Logout
-                    </a>
-                </div>
-            </li>*@
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                    <img class="img-profile rounded-circle"
+                                         src="img/undraw_profile.svg">
+                                </a>
+                                 Dropdown - User Information
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>*@
 
                     </ul>
 
@@ -245,7 +244,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     @RenderBody()
-                    
+
 
                 </div>
                 <!-- /.container-fluid -->
@@ -308,9 +307,16 @@
 
     <!-- Page level custom scripts -->
     <script src="/js/demo/datatables-demo.js"></script>
-    
-    
-    
+
+    <!-- Page level plugins -->
+    <script src="/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="/js/demo/chart-area-demo.js"></script>
+    <script src="/js/demo/chart-pie-demo.js"></script>
+    <script src="/js/demo/chart-bar-demo.js"></script>
+
+
 
 
 </body>

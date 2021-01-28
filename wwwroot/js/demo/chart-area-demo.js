@@ -24,95 +24,207 @@ function number_format(number, decimals, dec_point, thousands_sep) {
     s[1] = s[1] || '';
     s[1] += new Array(prec - s[1].length + 1).join('0');
   }
+
   return s.join(dec);
 }
 
-// Area Chart Example
-var ctx = document.getElementById("myAreaChart");
-var myLineChart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    datasets: [{
-      label: "Earnings",
-      lineTension: 0.3,
-      backgroundColor: "rgba(78, 115, 223, 0.05)",
-      borderColor: "rgba(78, 115, 223, 1)",
-      pointRadius: 3,
-      pointBackgroundColor: "rgba(78, 115, 223, 1)",
-      pointBorderColor: "rgba(78, 115, 223, 1)",
-      pointHoverRadius: 3,
-      pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
-      pointHoverBorderColor: "rgba(78, 115, 223, 1)",
-      pointHitRadius: 10,
-      pointBorderWidth: 2,
-      data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000],
-    }],
-  },
-  options: {
-    maintainAspectRatio: false,
-    layout: {
-      padding: {
-        left: 10,
-        right: 25,
-        top: 25,
-        bottom: 0
-      }
+
+var request = $.ajax({
+    url: '/statistika/area',
+    type: 'get',
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     },
-    scales: {
-      xAxes: [{
-        time: {
-          unit: 'date'
-        },
-        gridLines: {
-          display: false,
-          drawBorder: false
-        },
-        ticks: {
-          maxTicksLimit: 7
-        }
-      }],
-      yAxes: [{
-        ticks: {
-          maxTicksLimit: 5,
-          padding: 10,
-          // Include a dollar sign in the ticks
-          callback: function(value, index, values) {
-            return '$' + number_format(value);
-          }
-        },
-        gridLines: {
-          color: "rgb(234, 236, 244)",
-          zeroLineColor: "rgb(234, 236, 244)",
-          drawBorder: false,
-          borderDash: [2],
-          zeroLineBorderDash: [2]
-        }
-      }],
+    data: {
     },
-    legend: {
-      display: false
+    success: function (e) {
     },
-    tooltips: {
-      backgroundColor: "rgb(255,255,255)",
-      bodyFontColor: "#858796",
-      titleMarginBottom: 10,
-      titleFontColor: '#6e707e',
-      titleFontSize: 14,
-      borderColor: '#dddfeb',
-      borderWidth: 1,
-      xPadding: 15,
-      yPadding: 15,
-      displayColors: false,
-      intersect: false,
-      mode: 'index',
-      caretPadding: 10,
-      callbacks: {
-        label: function(tooltipItem, chart) {
-          var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
-        }
-      }
+    error: function (er) {
+        console.log(er);
     }
-  }
+});
+
+request.done(function (res) {
+    // Area Chart Example
+    var ctx = document.getElementById("myAreaChart");
+    var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            datasets: [{
+                label: "Earnings",
+                lineTension: 0.3,
+                backgroundColor: "rgba(78, 115, 223, 0.05)",
+                borderColor: "rgba(78, 115, 223, 1)",
+                pointRadius: 3,
+                pointBackgroundColor: "rgba(78, 115, 223, 1)",
+                pointBorderColor: "rgba(78, 115, 223, 1)",
+                pointHoverRadius: 3,
+                pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+                pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                pointHitRadius: 10,
+                pointBorderWidth: 2,
+                data: [res[0], res[1], res[2], res[3], res[4], res[5], res[6], res[7], res[8], res[9], res[10], res[11]],
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 25,
+                    top: 25,
+                    bottom: 0
+                }
+            },
+            scales: {
+                xAxes: [{
+                    time: {
+                        unit: 'date'
+                    },
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        maxTicksLimit: 7
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        maxTicksLimit: 5,
+                        padding: 10,
+                        // Include a dollar sign in the ticks
+                        callback: function (value, index, values) {
+                            return '$' + number_format(value);
+                        }
+                    },
+                    gridLines: {
+                        color: "rgb(234, 236, 244)",
+                        zeroLineColor: "rgb(234, 236, 244)",
+                        drawBorder: false,
+                        borderDash: [2],
+                        zeroLineBorderDash: [2]
+                    }
+                }],
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                backgroundColor: "rgb(255,255,255)",
+                bodyFontColor: "#858796",
+                titleMarginBottom: 10,
+                titleFontColor: '#6e707e',
+                titleFontSize: 14,
+                borderColor: '#dddfeb',
+                borderWidth: 1,
+                xPadding: 15,
+                yPadding: 15,
+                displayColors: false,
+                intersect: false,
+                mode: 'index',
+                caretPadding: 10,
+                callbacks: {
+                    label: function (tooltipItem, chart) {
+                        var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+                        return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+                    }
+                }
+            }
+        }
+    });
+});
+
+
+request.fail(function (jqXHR, textStatus) {
+    // Area Chart Example
+    var ctx = document.getElementById("myAreaChart");
+    var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            datasets: [{
+                label: "Earnings",
+                lineTension: 0.3,
+                backgroundColor: "rgba(78, 115, 223, 0.05)",
+                borderColor: "rgba(78, 115, 223, 1)",
+                pointRadius: 3,
+                pointBackgroundColor: "rgba(78, 115, 223, 1)",
+                pointBorderColor: "rgba(78, 115, 223, 1)",
+                pointHoverRadius: 3,
+                pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+                pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                pointHitRadius: 10,
+                pointBorderWidth: 2,
+                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            }],
+        },
+        options: {
+            maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 25,
+                    top: 25,
+                    bottom: 0
+                }
+            },
+            scales: {
+                xAxes: [{
+                    time: {
+                        unit: 'date'
+                    },
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        maxTicksLimit: 7
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        maxTicksLimit: 5,
+                        padding: 10,
+                        // Include a dollar sign in the ticks
+                        callback: function (value, index, values) {
+                            return '$' + number_format(value);
+                        }
+                    },
+                    gridLines: {
+                        color: "rgb(234, 236, 244)",
+                        zeroLineColor: "rgb(234, 236, 244)",
+                        drawBorder: false,
+                        borderDash: [2],
+                        zeroLineBorderDash: [2]
+                    }
+                }],
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                backgroundColor: "rgb(255,255,255)",
+                bodyFontColor: "#858796",
+                titleMarginBottom: 10,
+                titleFontColor: '#6e707e',
+                titleFontSize: 14,
+                borderColor: '#dddfeb',
+                borderWidth: 1,
+                xPadding: 15,
+                yPadding: 15,
+                displayColors: false,
+                intersect: false,
+                mode: 'index',
+                caretPadding: 10,
+                callbacks: {
+                    label: function (tooltipItem, chart) {
+                        var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+                        return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+                    }
+                }
+            }
+        }
+    });
 });
