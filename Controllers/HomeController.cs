@@ -3,6 +3,7 @@ using Libraryms.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -53,6 +54,7 @@ namespace Libraryms.Controllers
         {
 
             var user = await _userManager.FindByEmailAsync(model.Email);
+            DateTime d = DateTime.Now;
 
             if (user != null)
             {
@@ -64,7 +66,7 @@ namespace Libraryms.Controllers
                     var pagesat = _context.Pagesa.ToList();
                     foreach(Pagesa p in pagesat)
                     {
-                        if(p.DataEPageses == p.DataESkadimit)
+                        if ((DateTime.Compare(d,p.DataESkadimit)) > 0)
                         {
                             p.Active = false;
                             _context.Pagesa.Update(p);
