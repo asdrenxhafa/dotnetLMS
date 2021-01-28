@@ -50,7 +50,7 @@ namespace Libraryms.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.klientetid = _context.Klienti.ToList();
+            ViewBag.klientetid = _context.Klienti.Where(k => k.Aktiv==true).ToList();
             var librat = _context.Libra.Where(l => l.E_Lire == false).ToList();
 
             ViewBag.libraid = librat;

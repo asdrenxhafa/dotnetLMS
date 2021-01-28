@@ -1,4 +1,4 @@
-﻿
+﻿@model Libraryms.Models.Pagesa;
 @{
     ViewData["Title"] = "Create";
 }
@@ -16,11 +16,13 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Shuma:</label>
-                    <input name="Shuma" id="Shuma" type="text" class="form-control" value="" required>
+                    <select asp-for="Shuma" class="form-control" asp-items="@(new SelectList(ViewBag.shuma))">
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label>Klienti</label>
-                    <input name="Klienti_id" id="Klienti_id" type="text" class="form-control" value="" required>
+                    <label>Klienti:</label>
+                    <select asp-for="Klienti_id" class="form-control" asp-items="@(new SelectList(ViewBag.klientetid,"id","id"))">
+                    </select>
                 </div>
             </div>
             <div class="modal-footer">

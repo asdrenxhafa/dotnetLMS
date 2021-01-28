@@ -11,10 +11,11 @@ namespace Libraryms.Models
 
         // [Required]
         // [MinLength(5)]
-        public string shuma { get; set; }
-        public string Klienti_id { get; set; }
+        public int Shuma { get; set; }
+        public int Klienti_id { get; set; }
         public bool Active { get; set; }
-        public DateTime created_at { get; set; }
-       
+        public DateTime DataEPageses { get; set; }
+
+        public DateTime DataESkadimit { get; set; }
     }
 }

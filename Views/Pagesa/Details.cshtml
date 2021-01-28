@@ -1,16 +1,17 @@
 ﻿@model Libraryms.Models.Pagesa
+@{
+    ViewData["Title"] = "Index";
 }
 <div>
     <table class="table">
         <tr>
             <td>@Model.id</td>
-            <td>@Model.shuma</td>
+            <td>@Model.Shuma</td>
+            <td>@Model.Active</td>
             <td>@Model.Klienti_id</td>
-            <td>@Model.Active/td>
-            @{
-                ViewData["Title"] = "Details";
-             <td>@Model.created_at</td>
-                }
-            </tr>
-        </table>
-    </div>
+            <td>@Model.DataEPageses</td>
+            <td>@Model.DataESkadimit</td>
+            
+        </tr>
+    </table>
+</div>

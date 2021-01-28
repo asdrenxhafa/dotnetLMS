@@ -1,8 +1,10 @@
-﻿using Libraryms.Models;
+﻿using Libraryms.Data;
+using Libraryms.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 
 
@@ -12,13 +14,15 @@ namespace Libraryms.Controllers
     public class HomeController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly LibrarymsContext _context;
         private readonly SignInManager<IdentityUser> _signInManager;
         public HomeController(UserManager<IdentityUser> userManager, 
-            SignInManager<IdentityUser> signInManager)
+            SignInManager<IdentityUser> signInManager, LibrarymsContext context)
         {
 
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -57,6 +61,20 @@ namespace Libraryms.Controllers
 
                 if (signInresult.Succeeded)
                 {
+                    var pagesat = _context.Pagesa.ToList();
+                    foreach(Pagesa p in pagesat)
+                    {
+                        if(p.DataEPageses == p.DataESkadimit)
+                        {
+                            p.Active = false;
+                            _context.Pagesa.Update(p);
+                            var klienti = _context.Klienti.Where(k => k.id == p.Klienti_id).First();
+                            klienti.Aktiv = false;
+                            _context.Klienti.Update(klienti);
+                            _context.SaveChanges();
+                        }
+                    }
+
                     if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);

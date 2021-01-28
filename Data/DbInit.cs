@@ -54,18 +54,6 @@ namespace Libraryms.Data
                 context.Rezervimi.Add(r);
             }
             context.SaveChanges();
-
-            var pagesa = new Pagesa[]
-           {
-                new Pagesa{ shuma="5euro" , Klienti_id="1" , Active=true}
-           };
-            foreach (Pagesa p in pagesa)
-            {
-                context.Pagesa.Add(p);
-            }
-            context.SaveChanges();
-
-
         }
     }
 }
