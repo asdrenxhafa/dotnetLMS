@@ -60,7 +60,7 @@ namespace Libraryms.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,Shuma,Klienti_id,Active,DataEPageses,DataESkadimit")] Pagesa pagesa)
+        public async Task<IActionResult> Create(Pagesa pagesa)
         {
             try
             {
@@ -100,6 +100,24 @@ namespace Libraryms.Controllers
         // GET: Pagesas/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            
+            List<SelectListItem> selectListItems = new List<SelectListItem>();
+            selectListItems.Add(new SelectListItem
+            {
+                Text = "5",
+                Value = "5"
+            });
+            selectListItems.Add(new SelectListItem
+            {
+                Text = "10",
+                Value = "10"
+            });
+            selectListItems.Add(new SelectListItem
+            {
+                Text = "15",
+                Value = "15"
+            });
+            ViewBag.shuma = selectListItems;
             if (id == null)
             {
                 return NotFound();
@@ -118,7 +136,7 @@ namespace Libraryms.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,shuma,Klienti_id,Active,DataEPageses,DataESkadimit")] Pagesa pagesa)
+        public async Task<IActionResult> Edit(int id,Pagesa pagesa)
         {
             if (id != pagesa.id)
             {

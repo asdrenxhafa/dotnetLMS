@@ -16,7 +16,7 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Shuma:</label>
-                    <select asp-for="Shuma" class="form-control" asp-items="@(new SelectList(ViewBag.shuma))">
+                    <select asp-for="@Model.Shuma" class="form-control" asp-items="ViewBag.shuma">
                     </select>
                 </div>
                 <div class="form-group">
