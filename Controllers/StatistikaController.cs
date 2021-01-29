@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Libraryms.Data;
 using Libraryms.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Libraryms.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class StatistikaController : Controller
     {
         private readonly LibrarymsContext _context;
@@ -22,7 +24,6 @@ namespace Libraryms.Controllers
         }
 
         [HttpGet]
-
         public ActionResult<IEnumerable<int>> Area()
         {
             var jan = 
@@ -76,6 +77,24 @@ namespace Libraryms.Controllers
                     oct,
                     nov,
                     dec
+                };
+        }
+
+
+        [HttpGet]
+        public ActionResult<IEnumerable<Libra>> Pie()
+        {
+            //   string sqlString = "SELECT Titulli from Libra where id = (SELECT Libra_id FROM Huazimi GROUP BY Libra_id ORDER BY COUNT(*) desc LIMIT 1)";
+
+            var libs =
+                _context.Libra.OrderByDescending(l => l.huazime).Take(3).ToArray();
+
+
+            return new[]
+                {
+                    libs[0],
+                    libs[1],
+                    libs[2]
                 };
         }
 

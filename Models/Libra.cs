@@ -13,6 +13,7 @@ namespace Libraryms.Models
         [Required]
         public string Titulli { get; set; }
         public string Autori { get; set; }
+        public int huazime { get; set; }
         public bool E_Lire { get; set; }
     }
 }

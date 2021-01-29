@@ -27,7 +27,7 @@ namespace Libraryms.Controllers
             var huazimet = from s in _context.Huazimi
                              select s;
 
-            int pageSize = 3;
+            int pageSize = 10;
             return View(await PaginatedList<Huazimi>.CreateAsync(huazimet.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
@@ -74,6 +74,7 @@ namespace Libraryms.Controllers
                              _context.Huazimi.Add(huazimi);
                             Libra libri = _context.Libra.Where(t => t.id == huazimi.Libra_id).First();
                             libri.E_Lire = false;
+                            libri.huazime++;
                              _context.Libra.Update(libri);
                     await _context.SaveChangesAsync();
                             return RedirectToAction(nameof(Index));

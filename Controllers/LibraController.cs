@@ -65,7 +65,7 @@ namespace Libraryms.Controllers
             //        break;
             //}
 
-            int pageSize = 3;
+            int pageSize = 20;
             return View(await PaginatedList<Libra>.CreateAsync(librat.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
@@ -103,6 +103,7 @@ namespace Libraryms.Controllers
                 if (ModelState.IsValid)
                 {
                     libra.E_Lire = true;
+                    libra.huazime = 0;
                     _context.Add(libra);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
@@ -150,6 +151,7 @@ namespace Libraryms.Controllers
             {
                 try
                 {
+
                     _context.Update(libra);
                     await _context.SaveChangesAsync();
                 }

@@ -14,7 +14,7 @@ namespace Libraryms.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Titulli = table.Column<string>(nullable: false),
                     Autori = table.Column<string>(nullable: true),
-                    E_Lire = table.Column<bool>(nullable: false, defaultValue: true)
+                    E_Lire = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
