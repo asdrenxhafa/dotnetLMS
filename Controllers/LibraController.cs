@@ -103,7 +103,6 @@ namespace Libraryms.Controllers
                 if (ModelState.IsValid)
                 {
                     libra.E_Lire = true;
-                    libra.huazime = 0;
                     _context.Add(libra);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
@@ -140,7 +139,7 @@ namespace Libraryms.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("id,Titulli,Autori,E_Lire")] Libra libra)
+        public async Task<IActionResult> Edit(int id, [Bind("id,Titulli,Autori,E_Lire,huazime")] Libra libra)
         {
             if (id != libra.id)
             {
@@ -151,8 +150,10 @@ namespace Libraryms.Controllers
             {
                 try
                 {
-
-                    _context.Update(libra);
+                    var lib = _context.Libra.FirstOrDefault(l => l.id == libra.id);
+                    lib.Titulli = libra.Titulli;
+                    lib.Autori = libra.Autori;
+                    _context.Update(lib);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
