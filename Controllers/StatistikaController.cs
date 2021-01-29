@@ -81,22 +81,22 @@ namespace Libraryms.Controllers
         }
 
 
-        //[HttpGet]
-        //public ActionResult<IEnumerable<Libra>> Pie()
-        //{
-        //    //   string sqlString = "SELECT Titulli from Libra where id = (SELECT Libra_id FROM Huazimi GROUP BY Libra_id ORDER BY COUNT(*) desc LIMIT 1)";
+        [HttpGet]
+        public ActionResult<IEnumerable<Libra>> Pie()
+        {
+            //   string sqlString = "SELECT Titulli from Libra where id = (SELECT Libra_id FROM Huazimi GROUP BY Libra_id ORDER BY COUNT(*) desc LIMIT 1)";
 
-        //    var libs =
-        //        _context.Libra.OrderByDescending(l => l.huazime).Take(3).ToArray();
+            var libs =
+                _context.Libra.OrderByDescending(l => l.huazime).Take(3).ToArray();
 
 
-        //    return new[]
-        //        {
-        //            libs[0],
-        //            libs[1],
-        //            libs[2]
-        //        };
-        //}
+            return new[]
+                {
+                    libs[0],
+                    libs[1],
+                    libs[2]
+                };
+        }
 
 
 
