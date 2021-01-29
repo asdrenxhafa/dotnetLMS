@@ -5,13 +5,22 @@ ViewData["Title"] = "Details";
 <div>
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="color:black;">
         <tr>
+            <td bgcolor="white">ID</td>
+            <td bgcolor="white">Emri</td>
+            <td bgcolor="white">Email</td>
+            <td bgcolor="white">Tel</td>
+            <td bgcolor="white">Aktiv</td>
+            <td bgcolor="white">Created At</td>
+
+        </tr>
+        <tr>
             <td bgcolor="white">@Model.id</td>
             <td bgcolor="white">@Model.Emri</td>
             <td bgcolor="white">@Model.Email</td>
             <td bgcolor="white">@Model.NumriTel</td>
             <td bgcolor="white">@Model.Aktiv</td>
             <td bgcolor="white">@Model.created_at</td>
-       
+
         </tr>
     </table>
 </div>
