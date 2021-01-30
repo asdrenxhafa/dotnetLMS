@@ -28,7 +28,7 @@ namespace Libraryms.Controllers
             var huazimet = from s in _context.Huazimi
                              select s;
 
-            int pageSize = 10;
+            int pageSize = 20;
             return View(await PaginatedList<Huazimi>.CreateAsync(huazimet.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 

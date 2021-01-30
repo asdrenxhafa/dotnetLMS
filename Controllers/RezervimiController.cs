@@ -25,7 +25,7 @@ namespace Libraryms.Controllers
             var rezervimet = from s in _context.Rezervimi
                            select s;
 
-            int pageSize = 3;
+            int pageSize = 20;
             return View(await PaginatedList<Rezervimi>.CreateAsync(rezervimet.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
         public async Task<IActionResult> Details(int? id)

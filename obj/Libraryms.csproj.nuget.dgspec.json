@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Blerina\\Documents\\dotnetLMS\\Libraryms.csproj": {}
+    "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Blerina\\Documents\\dotnetLMS\\Libraryms.csproj": {
+    "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Blerina\\Documents\\dotnetLMS\\Libraryms.csproj",
+        "projectUniqueName": "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj",
         "projectName": "Libraryms",
-        "projectPath": "C:\\Users\\Blerina\\Documents\\dotnetLMS\\Libraryms.csproj",
-        "packagesPath": "C:\\Users\\Blerina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Blerina\\Documents\\dotnetLMS\\obj\\",
+        "projectPath": "C:\\Users\\Asdren\\Desktop\\Libraryms\\Libraryms.csproj",
+        "packagesPath": "C:\\Users\\Asdren\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Asdren\\Desktop\\Libraryms\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Blerina\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Asdren\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,8 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://packages.nuget.org": {},
-          "http://packagesource": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,6 +38,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Mailer.NET": {
+              "target": "Package",
+              "version": "[1.5.0, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.9, )"

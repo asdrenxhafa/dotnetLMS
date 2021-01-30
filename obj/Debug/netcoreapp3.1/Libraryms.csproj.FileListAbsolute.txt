@@ -656,3 +656,6 @@ C:\Users\leu\source\repos\dotnetLMS\obj\Debug\netcoreapp3.1\Libraryms.genruntime
 C:\Users\leu\source\repos\dotnetLMS\bin\Debug\netcoreapp3.1\Mailer.NET.dll
 C:\Users\leu\source\repos\dotnetLMS\bin\Debug\netcoreapp3.1\NVelocity.dll
 C:\Users\leu\source\repos\dotnetLMS\bin\Debug\netcoreapp3.1\RestSharp.dll
+C:\Users\Asdren\Desktop\Libraryms\bin\Debug\netcoreapp3.1\Mailer.NET.dll
+C:\Users\Asdren\Desktop\Libraryms\bin\Debug\netcoreapp3.1\NVelocity.dll
+C:\Users\Asdren\Desktop\Libraryms\bin\Debug\netcoreapp3.1\RestSharp.dll

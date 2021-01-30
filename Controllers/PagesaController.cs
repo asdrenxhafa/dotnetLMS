@@ -25,7 +25,7 @@ namespace Libraryms.Controllers
         {
             var pagesat = from s in _context.Pagesa
                            select s;
-            int pageSize = 3;
+            int pageSize = 20;
             return View(await PaginatedList<Pagesa>.CreateAsync(pagesat.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 

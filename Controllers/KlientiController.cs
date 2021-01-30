@@ -52,7 +52,7 @@ namespace Libraryms.Controllers
                 klientet = klientet.Where(s => s.Emri.Contains(searchString) || s.Email.Contains(searchString));
             }
 
-            int pageSize = 3;
+            int pageSize = 20;
             return View(await PaginatedList<Klienti>.CreateAsync(klientet.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
