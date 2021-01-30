@@ -123,6 +123,9 @@ namespace Libraryms.Controllers
                     };
                     smtpClient.EnableSsl = true;
                     smtpClient.Send(mail);
+                    r.Aktiv = false;
+                    _context.Rezervimi.Update(r);
+                    _context.SaveChanges();
 
                 }
             }
