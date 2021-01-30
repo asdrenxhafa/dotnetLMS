@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Net.Mail;
 
 namespace Libraryms.Controllers
 {
@@ -104,6 +105,31 @@ namespace Libraryms.Controllers
             libri.E_Lire = true;
             _context.Libra.Update(libri);
             _context.SaveChanges();
+            var rez = _context.Rezervimi.Where(r => r.Aktiv == true).ToList();
+            foreach (Rezervimi r in rez)
+            {
+                if(huazimi.Libra_id == r.Libra_id)
+                {
+                    var klienti = _context.Klienti.Where(k => k.id == r.Klienti_id).First();
+                    var libra = _context.Libra.Where(k => k.id == r.Libra_id).First();
+                    MailMessage mail = new MailMessage("projektilibrary@gmail.com", klienti.Email);
+                    mail.Subject = "Rezervimi I Librit " + libra.Titulli;
+                    mail.Body = "Pershendetje , Ju informojme se librin " + libra.Titulli+ " qe keni rezervuar tashme eshte i lire dhe mund te vini ta merrni Librin";
+                    SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                    smtpClient.Credentials = new System.Net.NetworkCredential()
+                    {
+                        UserName = "projektilibrary@gmail.com",
+                        Password = "projektilibrary123"
+                    };
+                    smtpClient.EnableSsl = true;
+                    smtpClient.Send(mail);
+                    r.Aktiv = false;
+                    _context.Rezervimi.Update(r);
+                    _context.SaveChanges();
+
+                }
+            }
+       
 
             return RedirectToAction("Index");
         }
